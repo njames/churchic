@@ -3,3 +3,4 @@
 .env
 # intellij files
 *.iml
+/.idea
