@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace sc\cic\Services;
 
-use App\User;
+use sc\cic\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

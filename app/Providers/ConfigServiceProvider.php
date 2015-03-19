@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace sc\cic\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
