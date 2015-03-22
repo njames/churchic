@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndividualsCcbTable extends Migration {
+class CreateIndividualsTable extends Migration {
 
 	/**
 	 * Run the migrations.
