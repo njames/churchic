@@ -1,4 +1,4 @@
-<?php namespace sc\cic;
+<?php namespace sc\cic\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
