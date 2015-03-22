@@ -5,18 +5,18 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*",
+		"laravel/framework": "5.*",
     "guzzlehttp/guzzle": "4.*",
     "guzzlehttp/log-subscriber": "1.*",
     "guzzlehttp/oauth-subscriber": "*",
 		"mailchimp/mailchimp": "~2.0",
 		"pda/pheanstalk": "~2.1",
-		"mitch/hashids": "1.x"
+    "vinkla/hashids":"~1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
-    "way/generators": "~2.0"
+    "way/generators": "~3.0"
 	},
 	"autoload": {
 		"classmap": [
