@@ -6,7 +6,9 @@ use Symfony\Component\Console\Input\InputArgument;
 use GuzzleHttp\Event\BeforeEvent;
 use sc\cic\ApiHelpers\CcbApi;
 use sc\cic\Models\ClientConnection;
-use Vinkla\Hashids\Facades\Hashids;
+//use Vinkla\Hashids\HashidsManager;
+use Illuminate\Support\Facades\Log;
+
 
 class CicCommand extends Command {
 
@@ -41,6 +43,8 @@ class CicCommand extends Command {
 	public function __construct()
 	{
 		parent::__construct();
+
+
 	}
 
 	/**
@@ -56,7 +60,7 @@ class CicCommand extends Command {
 	}
   protected function setApis(){
 
-    $this->hashids = new Hashids($this->client); // use clientname as seed
+//    $this->hashids = new Hashids($this->client); // use clientname as seed
 
     $clientConnection = ClientConnection::where('client_id', '=', $this->client)
                                           ->where('source_name', '=', 'CCB')->first();
@@ -78,7 +82,9 @@ class CicCommand extends Command {
   {
     $this->finish();
     $runTime = $this->runTime();
-    \Log::info("$this->name for $this->client ran in $runTime Seconds");
+    $msg = "$this->name for $this->client ran in $runTime Seconds";
+    Log::info($msg);
+    $this->line($msg);
   }
 
   /**
@@ -129,9 +135,9 @@ class CicCommand extends Command {
 
     if ($sxe === false) {
       $this->error("Failed loading XML");
-      \Log::error( "Failed loading XML in $this->name ");
+      Log::error( "Failed loading XML in $this->name ");
         foreach(libxml_get_errors() as $error) {
-          \Log::error($error->message);
+          Log::error($error->message);
         }
       return 1;
     }

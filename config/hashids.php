@@ -30,8 +30,8 @@ return [
 
 		'main' => [
 			'salt' => 'vtqUL1Z12AhqmUousDwQhwS0e5wxfpYg',
-			'length' => '64',
-			'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+			'length' => '10',
+			'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 		],
 
 		'alternative' => [

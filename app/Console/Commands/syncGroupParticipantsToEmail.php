@@ -4,6 +4,8 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Database\Eloquent;
+use sc\cic\Models\GroupParticipant;
+use Illuminate\Support\Facades\Log;
 
 
 class syncGroupParticipantsToEmail extends CicCommand {
@@ -57,14 +59,14 @@ class syncGroupParticipantsToEmail extends CicCommand {
 
      $result = $mcLists->batchSubscribe($listId, $batch, false, true, true);
 
-     \Log::info($result);
+     Log::info($result);
 
      $this->tidyUp();
  	}
 
    private function createMailList($groupId){
 
-     $groupParticipants = \GroupParticipant::where('client_id', '=' , $this->client)
+     $groupParticipants = GroupParticipant::where('client_id', '=' , $this->client)
                                ->where('group_id', '=' , $groupId)
                                ->where('receive_email_from_group', '=', true)->get();
 

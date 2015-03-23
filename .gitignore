@@ -4,3 +4,4 @@
 # intellij files
 *.iml
 /.idea
+data/

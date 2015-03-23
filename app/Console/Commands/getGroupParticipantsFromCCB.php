@@ -4,6 +4,8 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Database\Eloquent;
+use sc\cic\Models\Group;
+use sc\cic\Models\GroupParticipant;
 
 class getGroupParticipantsFromCCB extends CicCommand {
   /**
@@ -40,7 +42,7 @@ class getGroupParticipantsFromCCB extends CicCommand {
  		//
      parent::fire();
 
-     $groupsToUpdate = \Group::where('client_id', '=' , $this->client)
+     $groupsToUpdate = Group::where('client_id', '=' , $this->client)
                          ->where('sync', '=', true )->get();
 
      foreach($groupsToUpdate as $group) {
@@ -53,13 +55,13 @@ class getGroupParticipantsFromCCB extends CicCommand {
 
        foreach($sxe->response->groups->group->participants->participant as $participant ) {
 
-         $dbParticipant = \GroupParticipant::where('client_id', '=', $this->client)
+         $dbParticipant = GroupParticipant::where('client_id', '=', $this->client)
            ->where('group_id', '=', $group->group_id)
            ->where('participant_id', '=', $participant->attributes())
            ->first(); // only one row to get
 
          if (!$dbParticipant) {
-           $dbParticipant = new \GroupParticipant();
+           $dbParticipant = new GroupParticipant();
          }
 
          $dbParticipant->client_id = $this->client;
@@ -83,7 +85,7 @@ class getGroupParticipantsFromCCB extends CicCommand {
          }
          catch( Exception $e){
            // log the exception and continue
-           \Log::error($e);
+           Log::error($e);
            $this->error("$participant->name ");
          }
 

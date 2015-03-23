@@ -4,6 +4,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Database\Eloquent;
+use sc\cic\Models\Group;
 
 class getGroupsFromCCB extends CicCommand {
 
@@ -54,12 +55,12 @@ class getGroupsFromCCB extends CicCommand {
 
 
 
-       $dbGroup = \Group::where('client_id', '=' , $this->client)
+       $dbGroup = Group::where('client_id', '=' , $this->client)
                        ->where('group_id', '=' ,$group->attributes() )
                        ->first(); // only one row to get
 
        if(!$dbGroup) {
-         $dbGroup = new \Group();
+         $dbGroup = new Group();
        }
 
        $dbGroup->client_id = $this->client;

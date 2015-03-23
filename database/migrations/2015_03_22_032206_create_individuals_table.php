@@ -22,7 +22,7 @@ class CreateIndividualsTable extends Migration {
       $table->string('legal_first_name', 60)->nullable();
       $table->integer('sync_id')->nullable();
       $table->string('other_id', 20)->nullable();
-      $table->string('salutation', 5)->nullable();
+      $table->string('salutation',10)->nullable();
       $table->string('suffix', 5)->nullable();
       $table->integer('campus_id')->nullable();
       $table->string('campus', 30)->nullable();
