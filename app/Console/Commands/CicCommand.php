@@ -5,7 +5,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use GuzzleHttp\Event\BeforeEvent;
 use sc\cic\ApiHelpers\CcbApi;
-use Vinkla\Hashids;
+use sc\cic\Models\ClientConnection;
+use Vinkla\Hashids\Facades\Hashids;
 
 class CicCommand extends Command {
 
@@ -57,12 +58,12 @@ class CicCommand extends Command {
 
     $this->hashids = new Hashids($this->client); // use clientname as seed
 
-    $clientConnection = \ClientConnection::where('client_id', '=', $this->client)
+    $clientConnection = ClientConnection::where('client_id', '=', $this->client)
                                           ->where('source_name', '=', 'CCB')->first();
 
     $this->ccbApi = new CcbApi($clientConnection->client_id, $clientConnection->username, $clientConnection->password);
 
-    $clientConnection = \ClientConnection::where('client_id', '=', $this->client)
+    $clientConnection = ClientConnection::where('client_id', '=', $this->client)
                                           ->where('source_name', '=', 'Mailchimp')->first();
 
     $this->mailchimp =  new \Mailchimp($clientConnection->apikey);

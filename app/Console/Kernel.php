@@ -12,6 +12,13 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'sc\cic\Console\Commands\Inspire',
+		'sc\cic\Console\Commands\getGroupParticipantsFromCCB',
+		'sc\cic\Console\Commands\getGroupsFromCCB',
+		'sc\cic\Console\Commands\getIndividualsFromCCB',
+		'sc\cic\Console\Commands\getIndividualsFromCCBInitial',
+		'sc\cic\Console\Commands\syncGroupParticipantsToEmail',
+
+
 	];
 
 	/**

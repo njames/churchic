@@ -1,9 +1,10 @@
 <?php namespace sc\cic\Console\Commands;
 
-use Illuminate\Console\Command;
+use sc\cic\Console\Commands\CicCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Database\Eloquent;
+use Vinkla\Hashids\Facades\Hashids;
 
 class getIndividualsFromCCBInitial extends CicCommand {
 
