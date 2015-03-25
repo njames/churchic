@@ -19,3 +19,14 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('debug', function(){
+
+  $a = [1,2,3,4,5];
+
+  array_pop($a);
+
+  return 'hello xDebug';
+
+
+});
