@@ -1,7 +1,8 @@
 /vendor
 /node_modules
 .env
-# intellij files
-*.iml
+/data
+*.sublime-project
+*.sublime-workspace
 /.idea
-data/
+*.iml

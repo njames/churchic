@@ -34,6 +34,7 @@ class CreateIndividualsTable extends Migration {
       $table->datetime('membership_date')->nullable();
       $table->datetime('membership_end')->nullable();
       $table->integer('membership_type_id')->nullable();
+      $table->boolean('receive_email_from_church')->default(false);
       $table->string('giving_number', 20)->nullable();
       $table->string('email', 120)->nullable();
       $table->string('mailing_street_address', 60)->nullable();
