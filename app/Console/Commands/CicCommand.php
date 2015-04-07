@@ -1,6 +1,7 @@
 <?php namespace sc\cic\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use GuzzleHttp\Event\BeforeEvent;
@@ -131,7 +132,24 @@ class CicCommand extends Command {
 
     libxml_use_internal_errors(true);
 
-    $sxe = simplexml_load_string( $input->getBody() );
+//    $sxe = simplexml_load_string( $input->getBody() );
+
+    // testing
+    $filename = 'data/individuals-j.xml';
+
+    try
+    {
+        $contents = \File::get($filename);
+
+    }
+    catch (FileNotFoundException $exception)
+    {
+        $this->error("The file doesn't exist");
+    }
+
+    $sxe = simplexml_load_string( $contents );
+
+//    // end testing
 
     if ($sxe === false) {
       $this->error("Failed loading XML");
