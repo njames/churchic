@@ -52,11 +52,11 @@ class CcbParser {
       $dbIndividual->membership_date = self::parseDate( $individual->membership_date) ?: null;
       $dbIndividual->membership_end = self::parseDate( $individual->membership_end) ?: null;
 
-      $dbIndividual->membership_type_id = $individual->membership_type->attributes();
+      $dbIndividual->membership_type_id = (int)$individual->membership_type->attributes();
 
 
       $dbIndividual->receive_email_from_church = $individual->receive_email_from_church;
-      $dbIndividual->giving_number = $individual->giving_number;
+      $dbIndividual->giving_number = (int)$individual->giving_number;
       $dbIndividual->email = $individual->email;
 
       // addresses
