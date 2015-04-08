@@ -132,24 +132,25 @@ class CicCommand extends Command {
 
     libxml_use_internal_errors(true);
 
-//    $sxe = simplexml_load_string( $input->getBody() );
+    $sxe = simplexml_load_string( $input->getBody() );
 
-    // testing
-    $filename = 'data/individuals-j.xml';
-
-    try
-    {
-        $contents = \File::get($filename);
-
-    }
-    catch (FileNotFoundException $exception)
-    {
-        $this->error("The file doesn't exist");
-    }
-
-    $sxe = simplexml_load_string( $contents );
-
-//    // end testing
+//    // testing
+//    $filename = 'data/individuals-james.xml';
+//
+//    try
+//    {
+//        $contents = \File::get($filename);
+//
+//    }
+//    catch (FileNotFoundException $exception)
+//    {
+//        $this->error("The file doesn't exist");
+//    }
+//
+//    $sxe = simplexml_load_string( $contents );
+//
+////    dd($contents);
+////    // end testing
 
     if ($sxe === false) {
       $this->error("Failed loading XML");

@@ -54,9 +54,9 @@ class getIndividualsFromCCBInitial extends CicCommand {
 
     $startsWith = strtoupper($startsWith);
 
-//    $resp = $this->ccbApi->individualSearch(['last_name'=> $startsWith]);
+    $resp = $this->ccbApi->individualSearch(['last_name'=> $startsWith]);
 
-      $resp = []; // temp for testing
+//      $resp = []; // temp for testing
     //@todo refactor this
 
     $sxe = $this->parseXml($resp);
