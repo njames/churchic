@@ -16,9 +16,8 @@ class Kernel extends ConsoleKernel {
 		'sc\cic\Console\Commands\getGroupsFromCCB',
 		'sc\cic\Console\Commands\getIndividualsFromCCB',
 		'sc\cic\Console\Commands\getIndividualsFromCCBInitial',
-		'sc\cic\Console\Commands\syncGroupParticipantsToEmail',
-
-
+		'sc\cic\Console\Commands\putGroupParticipantsToEmail',
+		'sc\cic\Console\Commands\runCommands'
 	];
 
 	/**
@@ -29,8 +28,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected function schedule(Schedule $schedule)
 	{
-		$schedule->command('inspire')
-				 ->hourly();
+		$schedule->command('cic:runCommands')->everyTenMinutes();
 	}
 
 }

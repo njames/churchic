@@ -8,14 +8,14 @@ use sc\cic\Models\GroupParticipant;
 use Illuminate\Support\Facades\Log;
 
 
-class syncGroupParticipantsToEmail extends CicCommand {
+class putGroupParticipantsToEmail extends CicCommand {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'cic:syncGroupParticipantsToEmail';
+	protected $name = 'cic:putGroupParticipantsToEmail';
 
 
   /**
@@ -23,7 +23,7 @@ class syncGroupParticipantsToEmail extends CicCommand {
  	 *
  	 * @var string
  	 */
- 	protected $description = 'Synchronise the Group Participants with the Mail program.';
+ 	protected $description = 'Put the Group Participants with the Mail program.';
 
  	/**
  	 * Create a new command instance.
