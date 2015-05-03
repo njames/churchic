@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel {
 		'sc\cic\Console\Commands\getIndividualsFromCCB',
 		'sc\cic\Console\Commands\getIndividualsFromCCBInitial',
 		'sc\cic\Console\Commands\putGroupParticipantsToEmail',
+		'sc\cic\Console\Commands\getListsFromEmail',
 		'sc\cic\Console\Commands\runCommands'
 	];
 

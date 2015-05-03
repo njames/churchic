@@ -30,3 +30,6 @@ Route::get('debug', function(){
 
 
 });
+
+
+Route::get('/dashboard', 'DashboardController@index');
