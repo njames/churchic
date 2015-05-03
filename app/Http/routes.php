@@ -32,4 +32,19 @@ Route::get('debug', function(){
 });
 
 
+// domain routing
+Route::group(['domain'=>'{clientId}.churchic.local'], function()
+{
+
+  Route:get('test', function($clientId){
+    return 'Hello ' .$clientId;
+  });
+
+});
+
+
+
 Route::get('/dashboard', 'DashboardController@index');
+
+
+Route::get('/config', 'SyncConfigController@index');

@@ -4,6 +4,7 @@ use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use sc\cic\Models\SyncConfig;
 
 class SyncConfigController extends Controller {
 
@@ -17,6 +18,9 @@ class SyncConfigController extends Controller {
 		// this will return the sync configuration
 
 
+    $syncConfig = SyncConfig::all();
+
+    return view('config.index')->with('syncConfig', $syncConfig);
 
 
 	}
@@ -29,6 +33,8 @@ class SyncConfigController extends Controller {
 	public function create()
 	{
 		//
+
+
 	}
 
 	/**
