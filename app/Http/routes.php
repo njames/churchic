@@ -20,16 +20,19 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('debug', function(){
-
-  $a = [1,2,3,4,5];
-
-  array_pop($a);
-
-  return 'hello xDebug';
+// groups routes
+Route::get('groups', 'GroupsController@index');
+Route::get('groups/{id}', 'GroupsController@show');
 
 
-});
+
+Route::get('/dashboard', 'DashboardController@index');
+
+
+
+
+
+
 
 
 // domain routing
@@ -42,9 +45,18 @@ Route::group(['domain'=>'{clientId}.churchic.local'], function()
 
 });
 
-
-
-Route::get('/dashboard', 'DashboardController@index');
-
-
 Route::get('/config', 'SyncConfigController@index');
+
+
+// debugging below
+Route::get('debug', function(){
+
+  $a = [1,2,3,4,5];
+
+  array_pop($a);
+
+  return 'hello xDebug';
+
+
+});
+
