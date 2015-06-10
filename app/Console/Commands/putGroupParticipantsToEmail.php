@@ -1,53 +1,50 @@
-<?php namespace sc\cic\Console\Commands;
+<?php
+
+namespace sc\cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Illuminate\Database\Eloquent;
 use sc\cic\Models\GroupParticipant;
 use Illuminate\Support\Facades\Log;
 
+class putGroupParticipantsToEmail extends CicCommand
+{
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    protected $name = 'cic:putGroupParticipantsToEmail';
 
-class putGroupParticipantsToEmail extends CicCommand {
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Put the Group Participants with the Mail program.';
 
-	/**
-	 * The console command name.
-	 *
-	 * @var string
-	 */
-	protected $name = 'cic:putGroupParticipantsToEmail';
+    /**
+     * Create a new command instance.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function fire()
+    {
+        parent::fire();
 
-  /**
- 	 * The console command description.
- 	 *
- 	 * @var string
- 	 */
- 	protected $description = 'Put the Group Participants with the Mail program.';
-
- 	/**
- 	 * Create a new command instance.
- 	 *
- 	 * @return void
- 	 */
- 	public function __construct()
- 	{
- 		parent::__construct();
- 	}
-
- 	/**
- 	 * Execute the console command.
- 	 *
- 	 * @return mixed
- 	 */
- 	public function fire()
- 	{
-     parent::fire();
-
- 		// push to mail program
+        // push to mail program
      $this->info('Starting to Sync to email program');
 
-     $mcLists = new \Mailchimp_Lists($this->mailchimp);
+        $mcLists = new \Mailchimp_Lists($this->mailchimp);
 
  //    $mcLists->list
 
@@ -55,60 +52,55 @@ class putGroupParticipantsToEmail extends CicCommand {
 
      $listId = '2b86d30d93';
 
-     $batch = $this->createMailList(26);
+        $batch = $this->createMailList(26);
 
-     $result = $mcLists->batchSubscribe($listId, $batch, false, true, true);
+        $result = $mcLists->batchSubscribe($listId, $batch, false, true, true);
 
-     Log::info($result);
+        Log::info($result);
 
-     $this->tidyUp();
- 	}
+        $this->tidyUp();
+    }
 
-   private function createMailList($groupId){
-
-     $groupParticipants = GroupParticipant::where('client_id', '=' , $this->client)
-                               ->where('group_id', '=' , $groupId)
+    private function createMailList($groupId)
+    {
+        $groupParticipants = GroupParticipant::where('client_id', '=', $this->client)
+                               ->where('group_id', '=', $groupId)
                                ->where('receive_email_from_group', '=', true)->get();
 
-     $batch = [];
+        $batch = [];
 
-     foreach($groupParticipants as $participant){
+        foreach ($groupParticipants as $participant) {
+            array_push($batch,  ['email' => ['email' => $participant->email], 'email_type' => 'html', 'merge_vars' => ['FNAME' => $participant->first_name, 'LNAME' => $participant->last_name]]);
+        }
 
-       array_push($batch,  ['email'=>['email'=>$participant->email], 'email_type'=>'html', 'merge_vars'=>['FNAME'=>$participant->first_name, 'LNAME'=>$participant->last_name]]);
+        return $batch;
+    }
 
-     }
-
-     return $batch;
-   }
-
-
-
- 	/**
- 	 * Get the console command arguments.
- 	 *
- 	 * @return array
- 	 */
+   /**
+    * Get the console command arguments.
+    *
+    * @return array
+    */
    protected function getArguments()
-  	{
-     $args = parent::getArguments();
+   {
+       $args = parent::getArguments();
 
  //    array_push($args, ['example', InputArgument::REQUIRED, 'An example argument.']);
  //
      return $args;
- 	}
+   }
 
- 	/**
- 	 * Get the console command options.
- 	 *
- 	 * @return array
- 	 */
- 	protected function getOptions()
- 	{
-     $args = parent::getOptions();
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        $args = parent::getOptions();
 
  //     array_push($args, ['ChangedSince', null, InputOption::VALUE_OPTIONAL, 'Get all the groups changed after this date. Format yyy-mmm-dd.', null] );
 
      return $args;
- 	}
-
+    }
 }

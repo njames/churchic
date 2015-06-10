@@ -1,9 +1,10 @@
-<?php namespace sc\cic\Models;
+<?php
+
+namespace sc\cic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model {
-
-	//
-
+class Group extends Model
+{
+    //
 }

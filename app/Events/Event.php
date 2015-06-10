@@ -1,7 +1,8 @@
-<?php namespace sc\cic\Events;
+<?php
 
-abstract class Event {
+namespace sc\cic\Events;
 
-	//
-
+abstract class Event
+{
+    //
 }

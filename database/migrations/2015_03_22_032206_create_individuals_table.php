@@ -3,16 +3,14 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndividualsTable extends Migration {
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-    Schema::create('individuals', function(Blueprint $table) {
+class CreateIndividualsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create('individuals', function (Blueprint $table) {
       $table->string('id', 10)->primary();
       $table->string('client_id', 30)->index();
       $table->integer('individual_id');
@@ -22,7 +20,7 @@ class CreateIndividualsTable extends Migration {
       $table->string('legal_first_name', 60)->nullable();
       $table->integer('sync_id')->nullable();
       $table->string('other_id', 20)->nullable();
-      $table->string('salutation',10)->nullable();
+      $table->string('salutation', 10)->nullable();
       $table->string('suffix', 5)->nullable();
       $table->integer('campus_id')->nullable();
       $table->string('campus', 30)->nullable();
@@ -85,17 +83,13 @@ class CreateIndividualsTable extends Migration {
 
       $table->timestamps();
     });
+    }
 
-	}
-
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-    Schema::drop('individuals');
-	}
-
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::drop('individuals');
+    }
 }

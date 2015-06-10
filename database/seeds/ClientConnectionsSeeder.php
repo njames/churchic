@@ -1,21 +1,19 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent;
 use sc\cic\Models\ClientConnection;
 
 /**
  * @author nigeljames
  * @date   23/03/15 9:07 AM
  */
-class ClientConnectionsSeeder extends Seeder {
-
-
+class ClientConnectionsSeeder extends Seeder
+{
     public function run()
     {
         DB::table('client_connections')->delete();
 
-      ClientConnection::create(
+        ClientConnection::create(
         [
           'client_id' => 'hopeuc',
           'source_name' => 'CCB',
@@ -25,10 +23,10 @@ class ClientConnectionsSeeder extends Seeder {
           'consumer_key' => '',
           'consumer_secret' => '',
           'access_token_key' => '',
-          'access_token_secret' => ''
+          'access_token_secret' => '',
         ]);
 
-      ClientConnection::create(
+        ClientConnection::create(
         [
           'client_id' => 'hopeuc',
           'source_name' => 'Mailchimp',
@@ -38,9 +36,7 @@ class ClientConnectionsSeeder extends Seeder {
           'consumer_key' => '',
           'consumer_secret' => '',
           'access_token_key' => '',
-          'access_token_secret' => ''
+          'access_token_secret' => '',
         ]);
-
     }
-
 }

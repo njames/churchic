@@ -3,18 +3,15 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSyncConfigTable extends Migration {
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('sync_config', function(Blueprint $table)
+class CreateSyncConfigTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
     {
-  			$table->increments('id');
+        Schema::create('sync_config', function (Blueprint $table) {
+            $table->increments('id');
         $table->string('client_id', 30)->index();
         $table->string('from_service', 20);
         $table->string('from_group', 20);
@@ -22,17 +19,14 @@ class CreateSyncConfigTable extends Migration {
         $table->string('to_group', 20);
         $table->date('last_run');
         $table->timestamps();
-  		});
-	}
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('sync_config');
-	}
-
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::drop('sync_config');
+    }
 }

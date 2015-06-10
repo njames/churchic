@@ -1,7 +1,8 @@
-<?php namespace sc\cic\Commands;
+<?php
 
-abstract class Command {
+namespace sc\cic\Commands;
 
-	//
-
+abstract class Command
+{
+    //
 }
