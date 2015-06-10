@@ -5,9 +5,9 @@
 
   @foreach ($groups as $group)
     <group>
-      <h2>
+      <div class="body">
         <a href="{{ action('GroupsController@show', [$group->id]) }}">{{ $group->name }}</a>
-      </h2>
+      </div>
       <div class="body" > {{ $group->description }}</div>
     </group>
 
