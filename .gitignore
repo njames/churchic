@@ -1,7 +1,7 @@
 /vendor
 /node_modules
 .env
-/data
+/tests/data
 *.sublime-project
 *.sublime-workspace
 /.idea
