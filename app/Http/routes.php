@@ -47,3 +47,6 @@ Route::get('debug', function () {
   return 'hello xDebug';
 
 });
+
+
+Route::get('event', 'EventController@index');

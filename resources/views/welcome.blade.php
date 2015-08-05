@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>Church Interchange</title>
 
 		<link href='//fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
 
