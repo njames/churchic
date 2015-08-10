@@ -49,4 +49,20 @@ Route::get('debug', function () {
 });
 
 
-Route::get('event', 'EventController@index');
+Route::get('event', function () { //'EventController@index');
+
+//  return getenv('EVENTBRITE_KEY');
+
+  $eventbrite = new \Sqrc\Eventbrite\Eventbrite( getenv('EVENTBRITE_OAUTH'));
+
+//  dd($eventbrite);
+//   $events = $eventbrite->users(array('id'=> 'me') );
+//    $events = $eventbrite->users(['id'=> 'me/owned_events', ] );
+//    $events = $eventbrite->events(['id'=> '18045071294/attendees/', ] );
+
+    $events = $eventbrite->users(array('id'=> '563152524') );
+
+
+  dd($events);
+});
+

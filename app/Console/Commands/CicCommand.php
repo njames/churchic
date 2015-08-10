@@ -60,7 +60,7 @@ class CicCommand extends Command
 
 //    $this->hashids = new Hashids($this->client); // use clientname as seed
 
-    $clientConnection = ClientConnection::where('client_id', '=', $this->client)
+        $clientConnection = ClientConnection::where('client_id', '=', $this->client)
                                           ->where('source_name', '=', 'CCB')->first();
 
         $this->ccbApi = new CcbApi($clientConnection->client_id, $clientConnection->username, $clientConnection->password);
