@@ -66,3 +66,9 @@ Route::get('event', function () { //'EventController@index');
   dd($events);
 });
 
+
+
+// admin routes
+Route::get('admin', function () {
+    return view('admin/admin_template');
+});
