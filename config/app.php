@@ -135,7 +135,7 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-    'Vinkla\Hashids\HashidsServiceProvider',
+        'Vinkla\Hashids\HashidsServiceProvider',
 
         /*
          * Application Service Providers...
@@ -145,6 +145,12 @@ return [
         'sc\cic\Providers\ConfigServiceProvider',
         'sc\cic\Providers\EventServiceProvider',
         'sc\cic\Providers\RouteServiceProvider',
+
+        /*
+         * Other service providers
+         */
+                    // AdminLTE template provider
+        Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 
     ],
 
