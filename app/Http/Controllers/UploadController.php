@@ -17,6 +17,7 @@ class UploadController extends Controller
     public function index()
     {
         //
+        return view('admin.upload.index');
     }
 
     /**

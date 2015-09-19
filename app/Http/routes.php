@@ -76,3 +76,12 @@ Route::get('event', function () { //'EventController@index');
 Route::get('admin', function () {
     return view('admin/admin_template');
 });
+
+
+
+/// upload routes
+
+Route::get('upload', 'UploadController@index'  );
+
+
+
