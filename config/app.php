@@ -110,6 +110,8 @@ return [
 
     'providers' => [
 
+
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -151,7 +153,7 @@ return [
         /*
          * Other service providers
          */
-                    // AdminLTE template provider
+        // AdminLTE template provider
         Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
 
     ],
@@ -168,6 +170,8 @@ return [
     */
 
     'aliases' => [
+
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
         'App' => 'Illuminate\Support\Facades\App',
         'Artisan' => 'Illuminate\Support\Facades\Artisan',

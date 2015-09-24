@@ -15,9 +15,10 @@ Route::get('/', 'WelcomeController@index');
 
 //Route::get('home', 'HomeController@index');
 
-Route::get('/home', ['middleware' => 'auth', function () {
+//Route::get('/home', ['middleware' => 'auth', function () {
+Route::get('/home', function() {
     return view('home');
-}]);
+});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
@@ -40,17 +41,6 @@ Route::group(['domain' => '{clientId}.churchic.local'], function () {
 });
 
 Route::get('/config', 'SyncConfigController@index');
-
-// debugging below
-Route::get('debug', function () {
-
-  $a = [1, 2, 3, 4, 5];
-
-  array_pop($a);
-
-  return 'hello xDebug';
-
-});
 
 
 Route::get('event', function () { //'EventController@index');

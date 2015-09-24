@@ -4,10 +4,6 @@
     Home
 @endsection
 
-@section('htmlheader_scripts')
-    <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
-@endsection
-
 
 @section('main-content')
 <div class="container">
@@ -30,11 +26,6 @@
                       <div class="dz-error-mark"><span>✘</span></div>
                       <div class="dz-error-message"><span data-dz-errormessage></span></div>
                     </div>
-
-
-
-
-
 
 				</div>
 			</div>

@@ -24,7 +24,8 @@
 		"phpspec/phpspec": "~2.1",
     "way/generators": "~3.0",
     "laracasts/integrated": "~0.13",
-    "laracasts/generators": "~1.0"
+    "laracasts/generators": "~1.0",
+		"barryvdh/laravel-debugbar": "^2.0"
 	},
 	"autoload": {
 		"classmap": [
