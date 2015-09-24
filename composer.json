@@ -15,7 +15,7 @@
     "laravel/cashier": "~5.0",
     "illuminate/html": "~5.0",
     "sqrc/eventbrite": "dev-master",
-		"acacha/admin-lte-template-laravel": "1.*"
+		"acacha/admin-lte-template-laravel": "1.*",
     "barryvdh/laravel-debugbar": "^2.0"
 
 	},
