@@ -1,8 +1,13 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+    Upload Files
 @endsection
+
+@section('contentheader_title')
+    Upload Files
+@endsection
+
 
 
 @section('main-content')

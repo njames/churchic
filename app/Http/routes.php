@@ -64,7 +64,7 @@ Route::get('event', function () { //'EventController@index');
 
 // admin routes
 Route::get('admin', function () {
-    return view('admin/admin_template');
+    return view('admin/admin-home');
 });
 
 

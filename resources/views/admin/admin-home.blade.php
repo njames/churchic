@@ -1,7 +1,11 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+    Admin
+@endsection
+
+@section('contentheader_title')
+    Admin section
 @endsection
 
 
