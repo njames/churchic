@@ -15,7 +15,7 @@ class GroupsController extends Controller
     public function index()
     {
         //
-    $groups = Group::all();
+        $groups = Group::all();
 
         return view('admin.groups')->with('groups', $groups);
     }
@@ -56,6 +56,7 @@ class GroupsController extends Controller
         if (is_null($group)) {
             abort(404);
         }
+
 
         return view('admin.groups-show')->with('group', $group);
     }
