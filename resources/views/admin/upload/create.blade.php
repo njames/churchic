@@ -35,5 +35,5 @@
 
 
 @section('footer-scripts')
-    <script scr="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 @stop
