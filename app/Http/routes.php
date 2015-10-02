@@ -71,7 +71,7 @@ Route::get('admin', function () {
 
 /// upload routes
 
-Route::get('upload', 'UploadController@index'  );
+Route::resource('upload', 'UploadController'  );
 
 
 

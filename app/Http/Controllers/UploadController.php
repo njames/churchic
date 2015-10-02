@@ -27,7 +27,7 @@ class UploadController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.upload.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class UploadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'working on it';
     }
 
     /**
