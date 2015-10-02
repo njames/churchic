@@ -17,6 +17,9 @@
 
 @section('main-content')
 
+
+
+
     <form action="{{ route('upload.store') }}" method="POST" class="dropzone">
         
         {{ csrf_field() }}

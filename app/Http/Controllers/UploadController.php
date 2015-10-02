@@ -38,7 +38,16 @@ class UploadController extends Controller
      */
     public function store(Request $request)
     {
-        return 'working on it';
+        // $file = $request->file('file');
+
+        dd($request->file('file'));
+        // get orginal name 
+
+        return $file->getClientOriginalName();
+
+        // save to s3 or something
+
+        // save object in table
     }
 
     /**
