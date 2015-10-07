@@ -31,9 +31,9 @@
         <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
+            <li class=""><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
             <li><a href="{{ url('groups') }}"><i class='fa fa-link'></i> <span>Groups</span></a></li>
-            <li><a href="{{ url('upload') }}"><i class='fa fa-link'></i> <span>Upload</span></a></li>
+            <li @yield('PhotoEvents-active') ><a href="{{ url('PhotoEvents') }}"><i class='fa fa-link'></i> <span>Photo Events</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Multi-level</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

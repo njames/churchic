@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 
-class PhotoEvents extends Controller
+class PhotoEventsController extends Controller
 {
     public function __construct()
     {
@@ -30,7 +30,7 @@ class PhotoEvents extends Controller
      */
     public function create()
     {
-        //
+        return view('photoevents.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class PhotoEvents extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

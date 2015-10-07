@@ -69,9 +69,9 @@ Route::get('admin', function () {
 
 
 
-/// upload routes
+// photo event
 
-Route::resource('upload', 'UploadController'  );
+Route::resource('PhotoEvents', 'PhotoEventsController'  );
 
 
 
