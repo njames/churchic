@@ -2,7 +2,7 @@
 
 namespace sc\cic\Services;
 
-use sc\cic\User;
+use sc\cic\Models\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
