@@ -38,14 +38,15 @@ class UploadController extends Controller
      */
     public function store(Request $request)
     {
-        // $file = $request->file('file');
+         $file = $request->file('file');
 
-        dd($request->file('file'));
-        // get orginal name 
+        // get orginal name
 
-        return $file->getClientOriginalName();
+        $name = time() . $file->getClientOriginalName();
 
         // save to s3 or something
+        $file->move('uploads/photos', $name);
+        // create a thumbnail
 
         // save object in table
     }
