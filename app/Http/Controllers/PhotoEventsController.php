@@ -21,7 +21,9 @@ class PhotoEventsController extends Controller
      */
     public function index()
     {
-        return view('photoevents.index');
+        $PhotoEvents = PhotoEvent::all();
+
+        return view('photoevents.index')->with(['PhotoEvents' => $PhotoEvents ]);
     }
 
     /**

@@ -69,9 +69,7 @@ Route::get('admin', function () {
 
 
 
-// photo event
-
-
+// photo event routes
 Route::resource('PhotoEvents', 'PhotoEventsController'  );
 Route::group(['as' => 'PhotoEvents.'], function() {
     Route::post('PhotoEvents/loadExcel', ['as' => 'loadExcel', 'uses' => 'PhotoEventsController@loadExcel'] );
