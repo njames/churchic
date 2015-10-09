@@ -86,6 +86,8 @@ class PhotoEventsController extends Controller
     {
         // validate
 
+
+
         // find record by original file name
 
         // save file

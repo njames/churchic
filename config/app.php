@@ -153,6 +153,8 @@ return [
          */
         // AdminLTE template provider
         Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
+        // Excel
+        Maatwebsite\Excel\ExcelServiceProvider::class
 
     ],
 
@@ -204,6 +206,7 @@ return [
         'Hashids' => 'Vinkla\Hashids\Facades\Hashids',
         'HTML'=> 'Illuminate\Html\HtmlFacade',
         'Form'=> 'Illuminate\Html\FormFacade',
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
     ],
 
