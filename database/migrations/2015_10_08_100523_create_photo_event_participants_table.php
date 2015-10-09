@@ -19,6 +19,7 @@ class CreatePhotoEventParticipantsTable extends Migration
             $table->string('name', 60);
             $table->string('email', 120);
             $table->integer('assigned_number')->unsigned();
+            $table->string('orginal_name',20)->indexed();
             $table->string('path_photo_large',512);
             $table->string('path_photo_small',512);
             $table->timestamps();
