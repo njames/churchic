@@ -18,7 +18,7 @@
     <a href="{{ route('PhotoEvents.create') }}" class="btn btn-primary" type="submit">Create New  Photo Event</a>
 
     @foreach ($PhotoEvents as $PhotoEvent)
-    <div><a href="{{route('PhotoEvents.show', ['PhotoEvents' => $PhotoEvent->id]) }}">{{ $PhotoEvent->name }}</a></div>
+    <div><a href="{{ route('PhotoEvents.show', ['PhotoEvents' => $PhotoEvent->id]) }}">{{ $PhotoEvent->name }}</a></div>
     @endforeach
 
 </div>

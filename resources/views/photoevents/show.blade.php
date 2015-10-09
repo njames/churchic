@@ -20,15 +20,31 @@
 
 @section('main-content')
 <div class="container">
-	<div class="row">
-
-        {{ $photoEvent->name }}
 
 
-    </div>
+    <h3>Download Template</h3>
+    <a href="#" target="_blank">Spreadsheet Template</a>
+
+    <h3>Upload Spreadsheet</h3>
+
+    {!! Form::open(['url' => route('PhotoEvents.loadExcel'),
+                    'method' => 'POST' ]) !!}
+
+        {{ csrf_field() }}
+
+        {!! Form::label( 'ChooseSpreadsheet', 'Choose your Spreadsheet') !!}
+        {!! Form::file('ChooseSpreadsheet') !!}
+
+
+        {!! Form::submit('Upload Excel', ['class' => 'btn btn-primary' ]) !!}
+
+    {!! Form::close() !!}
+
 </div>
 
 <hr>
+
+    <h3>Upload Photos</h3>
 
 <form action="{{ route('PhotoEvents.loadPhoto') }}" method="POST" class="dropzone">
 
@@ -38,7 +54,7 @@
 
     <div class="fallback form-group">
         <input name="file" type="file" multiple />
-        {!! Form::submit('Upload Files', ['class' => 'btn btn-primary' ]) !!}
+        {!! Form::submit('Upload Photos', ['class' => 'btn btn-primary' ]) !!}
     </div>
 
 </form>
