@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use sc\cic\Models\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
