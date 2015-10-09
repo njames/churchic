@@ -9,7 +9,7 @@
     <body class="register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>Church</b>IC</a>
         </div>
 
         @if (count($errors) > 0)

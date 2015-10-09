@@ -43,16 +43,13 @@ class PhotoEventsController extends Controller
     public function store(Request $request)
     {
 
-
-
-//        dd($request->all());
         $data = $request->all();
 
         // validate
         $this->validate($request, ['name' => 'required|max:40']);
 
         // persist
-        PhotoEvent::create([ 'client_id' => 'hopeuc',
+        $id = PhotoEvent::create([ 'client_id' => 'hopeuc',
                              'name'      =>$data['name']
                            ]);
 
@@ -71,8 +68,48 @@ class PhotoEventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $photoEvent = PhotoEvent::findOrFail($id);
+
+        return view('photoevents.show', compact('photoEvent'));
     }
+
+    /**
+     * Handle the loading of the excel file
+     *
+     * @param $id
+     * @param $file
+     * @return string
+     */
+    public function loadExcel(Request $request)
+    {
+        // validate
+
+        // find record by original file name
+
+        // save file
+        return 'itworks';
+    }
+
+    /**
+     * Handle the loading of photos from dropzone
+     *
+     * @param $id
+     * @param $photo
+     * @return string
+     */
+    public function loadPhoto(Request $request)
+    {
+        // validate
+
+        // find record by original file name
+
+        // save file
+
+        // save smaller version
+
+        // update record (or create if none created )
+    }
+
 
     /**
      * Show the form for editing the specified resource.
