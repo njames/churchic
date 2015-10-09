@@ -20,7 +20,7 @@ Create a new Photo Event
 
             <div class="form-group">
                 <lable for="name">Event Name: </lable>
-                <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}"/>
+                <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" required="Event name is required"/>
             </div>
 
             <div class="form-group">

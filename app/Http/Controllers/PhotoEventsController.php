@@ -5,6 +5,7 @@ namespace sc\cic\Http\Controllers;
 use Illuminate\Http\Request;
 use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
+use sc\cic\Models\PhotoEvent;
 
 class PhotoEventsController extends Controller
 {
@@ -41,7 +42,25 @@ class PhotoEventsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
+
+
+//        dd($request->all());
+        $data = $request->all();
+
+        // validate
+        $this->validate($request, ['name' => 'required|max:40']);
+
+        // persist
+        PhotoEvent::create([ 'client_id' => 'hopeuc',
+                             'name'      =>$data['name']
+                           ]);
+
+        // redirect to
+        return redirect()->back();
+
+
+
     }
 
     /**

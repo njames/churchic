@@ -9,13 +9,17 @@
 @endsection
 
 @section('PhotoEvents-active')
-class="active"
+    class="active"
 @stop
 
 
 @section('main-content')
 <div class="container">
 	<div class="row">
-	</div>
+
+
+
+
+    </div>
 </div>
 @endsection

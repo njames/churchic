@@ -36,6 +36,11 @@
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Church Name" name="client_id" value="{{ old('client_id') }}"/>
+                    <span class="glyphicon glyphicon-home form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="Password" name="password"/>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
@@ -57,11 +62,11 @@
                 </div>
             </form>
 
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
-                <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
-            </div>
+<!--            <div class="social-auth-links text-center">-->
+<!--                <p>- OR -</p>-->
+<!--                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>-->
+<!--                <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>-->
+<!--            </div>-->
 
             <a href="{{ url('/auth/login') }}" class="text-center">I already have a membership</a>
         </div><!-- /.form-box -->

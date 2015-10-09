@@ -16,7 +16,7 @@ class CreatePhotoEventsTable extends Migration
             $table->increments('id');
             $table->string('client_id', 30)->index();
             $table->string('name', 40);
-            $table->string('key_photo', 255);
+            $table->string('key_photo', 255)->nullable();
             $table->timestamps();
         });
     }
