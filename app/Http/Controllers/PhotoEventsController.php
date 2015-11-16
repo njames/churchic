@@ -84,15 +84,20 @@ class PhotoEventsController extends Controller
      */
     public function loadExcel(Request $request)
     {
+//        dd($request);
         // validate
 
-        $filename = storage_path('uploads/csv/') . time() . $spreadsheet->getClientOriginalName();
+        $spreadsheet = $request->file('spreadsheet');
+        $filename = storage_path('uploads/csv') . time() . $spreadsheet->getClientOriginalName();
         $spreadsheet->move( $filename );
 
 
         // find record by original file name
 
         // save file
+
+        // redirect
+        return redirect()->route('PhotoEvents.index');
 
     }
 

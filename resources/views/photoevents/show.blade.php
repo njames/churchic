@@ -27,7 +27,7 @@
 
     <h3>Upload Spreadsheet</h3>
 
-    {!! Form::open(['url' => route('PhotoEvents.loadExcel'), 'method' => 'POST' ]) !!}
+    {!! Form::open(['url' => route('PhotoEvents.loadExcel'), 'method' => 'POST', 'files' => true ]) !!}
 
         {!! Form::label( 'spreadsheet', 'Choose your Spreadsheet') !!}
         {!! Form::file('spreadsheet') !!}
