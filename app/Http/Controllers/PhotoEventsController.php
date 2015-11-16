@@ -52,11 +52,11 @@ class PhotoEventsController extends Controller
 
         // persist
         $id = PhotoEvent::create([ 'client_id' => 'hopeuc',
-                             'name'      =>$data['name']
-                           ]);
+                                   'name' =>$data['name']
+                                 ]);
 
         // redirect to
-        return redirect()->back();
+        return redirect()->route('PhotoEvents.index');
 
 
 
@@ -103,11 +103,16 @@ class PhotoEventsController extends Controller
      */
     public function loadPhoto(Request $request)
     {
+        $file = $request->file('file');
         // validate
 
         // find record by original file name
 
-        // save file
+
+        // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick
+
+        $name = time() . $file->getClientOriginalName();
+        $file->move('uploads/photos' , $name);
 
         // save smaller version
 
