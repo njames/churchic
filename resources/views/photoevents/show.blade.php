@@ -23,17 +23,14 @@
 
 
     <h3>Download Template</h3>
-    <a href="#" target="_blank">Spreadsheet Template</a>
+    <a href="/templates/photo_event_template.csv" target="_blank">Spreadsheet Template</a>
 
     <h3>Upload Spreadsheet</h3>
 
-    {!! Form::open(['url' => route('PhotoEvents.loadExcel'),
-                    'method' => 'POST' ]) !!}
+    {!! Form::open(['url' => route('PhotoEvents.loadExcel'), 'method' => 'POST' ]) !!}
 
-        {{ csrf_field() }}
-
-        {!! Form::label( 'ChooseSpreadsheet', 'Choose your Spreadsheet') !!}
-        {!! Form::file('ChooseSpreadsheet') !!}
+        {!! Form::label( 'spreadsheet', 'Choose your Spreadsheet') !!}
+        {!! Form::file('spreadsheet') !!}
 
 
         {!! Form::submit('Upload Excel', ['class' => 'btn btn-primary' ]) !!}

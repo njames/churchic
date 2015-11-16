@@ -86,12 +86,14 @@ class PhotoEventsController extends Controller
     {
         // validate
 
+        $filename = storage_path('uploads/csv/') . time() . $spreadsheet->getClientOriginalName();
+        $spreadsheet->move( $filename );
 
 
         // find record by original file name
 
         // save file
-        return 'itworks';
+
     }
 
     /**
