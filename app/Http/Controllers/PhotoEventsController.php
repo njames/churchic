@@ -88,7 +88,7 @@ class PhotoEventsController extends Controller
         // validate
 
         $spreadsheet = $request->file('spreadsheet');
-        $filename = storage_path('uploads/csv') . time() . $spreadsheet->getClientOriginalName();
+        $filename = 'uploads/csv/' . time() . $spreadsheet->getClientOriginalName();
         $spreadsheet->move( $filename );
 
 
