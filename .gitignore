@@ -8,3 +8,4 @@
 *.iml
 /public/uploads
 /storage/uploads
+phpinfo.php
