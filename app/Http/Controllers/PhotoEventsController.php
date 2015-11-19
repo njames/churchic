@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 use sc\cic\Models\PhotoEvent;
+use sc\cic\Models\PhotoEventParticipants;
 use sc\cic\Util\PhotoListImport;
 
 class PhotoEventsController extends Controller
@@ -88,6 +89,11 @@ class PhotoEventsController extends Controller
         $results = $import->get();
 
         $results->each(function($row) {
+            $data = $row->toArray();
+            $data['client_id'] = \Auth::user()->client_id;
+            $data['photo_event_id'] = 1; // to work out how to get // change route?
+            PhotoEventParticipants::create($data);
+
 //            $row->first_name // etc
         });
         // redirect
