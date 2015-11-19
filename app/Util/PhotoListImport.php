@@ -9,10 +9,16 @@ use Input;
  */
 class PhotoListImport extends ExcelFile {
 
+    protected $delimiter  = ',';
+    protected $enclosure  = '"';
+//    protected $lineEnding = '\r\n';
 
     public function getFile() {
         // Import a user provided file
+
         $file = Input::file('spreadsheet');
+
+//        dd($file);
         $filename = $this->importFile($file);
 
             // Return it's location

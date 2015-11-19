@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 use sc\cic\Models\PhotoEvent;
+use sc\cic\Util\PhotoListImport;
 
 class PhotoEventsController extends Controller
 {
@@ -82,14 +83,19 @@ class PhotoEventsController extends Controller
      * @param $file
      * @return string
      */
-    public function loadExcel(Request $request)
+    public function loadExcel(PhotoListImport $import)
     {
 //        dd($request);
         // validate
 
-        $spreadsheet = $request->file('spreadsheet');
-        $filename = 'uploads/csv/' . time() . $spreadsheet->getClientOriginalName();
-        $spreadsheet->move( $filename );
+        $result = $import->getFile();
+
+        dd($result);
+//        $csv = $pli->getFile();
+
+//        $spreadsheet = $request->file('spreadsheet');
+//        $filename = 'uploads/csv/' . time() . $spreadsheet->getClientOriginalName();
+//        $spreadsheet->move( $filename );
 
 
         // find record by original file name
@@ -97,7 +103,7 @@ class PhotoEventsController extends Controller
         // save file
 
         // redirect
-        return redirect()->route('PhotoEvents.index');
+        return redirect()->back();
 
     }
 
