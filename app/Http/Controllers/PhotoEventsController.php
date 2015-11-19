@@ -85,23 +85,11 @@ class PhotoEventsController extends Controller
      */
     public function loadExcel(PhotoListImport $import)
     {
-//        dd($request);
-        // validate
+        $results = $import->get();
 
-        $result = $import->getFile();
-
-        dd($result);
-//        $csv = $pli->getFile();
-
-//        $spreadsheet = $request->file('spreadsheet');
-//        $filename = 'uploads/csv/' . time() . $spreadsheet->getClientOriginalName();
-//        $spreadsheet->move( $filename );
-
-
-        // find record by original file name
-
-        // save file
-
+        $results->each(function($row) {
+//            $row->first_name // etc
+        });
         // redirect
         return redirect()->back();
 

@@ -18,21 +18,18 @@ class PhotoListImport extends ExcelFile {
 
         $file = Input::file('spreadsheet');
 
-//        dd($file);
-        $filename = $this->importFile($file);
+        $filename =  time() . '_' . $file->getClientOriginalName();
 
-            // Return it's location
-        return $filename;
+        $file = $file->move('uploads/csv/', $filename);
+
+        // Return it's location
+        return $file->getPathname();
     }
 
 
-    private function importFile($file) {
+    public function processFile($filename) {
 
-        $filename = storage_path('uploads/csv/') . time() . $file->getClientOriginalName();
 
-        $file->move( $filename );
-
-        return $filename;
     }
 
 }
