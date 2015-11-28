@@ -27,7 +27,7 @@
 
     <h3>Upload Spreadsheet</h3>
 
-    {!! Form::open(['url' => route('PhotoEvents.loadExcel'), 'method' => 'POST', 'files' => true ]) !!}
+    {!! Form::open(['url' => route('PhotoEvents.loadExcel', ['eventId' => 1]), 'method' => 'POST', 'files' => true ]) !!}
 
         {!! Form::label( 'spreadsheet', 'Choose your Spreadsheet') !!}
         {!! Form::file('spreadsheet') !!}
@@ -43,7 +43,7 @@
 
     <h3>Upload Photos</h3>
 
-<form action="{{ route('PhotoEvents.loadPhoto') }}" method="POST" class="dropzone">
+<form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => 1]) }}" method="POST" class="dropzone">
 
     {{ csrf_field() }}
 
