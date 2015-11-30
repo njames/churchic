@@ -92,6 +92,7 @@ class PhotoEventsController extends Controller
             $data = $row->toArray();
             $data['client_id'] = \Auth::user()->client_id;
             $data['photo_event_id'] = 1; // to work out how to get // change route?
+// column names must be exact // handle if they are not
             PhotoEventParticipants::create($data);
 
 //            $row->first_name // etc
