@@ -43,11 +43,11 @@
 
     <h3>Upload Photos</h3>
 
-<form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => 1]) }}" method="POST" class="dropzone">
+<form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => $PhotoEvent->id]]) }}" method="POST" class="dropzone">
 
     {{ csrf_field() }}
 
-    <input name="id" value="{{ $photoEvent->id }}" hidden="hidden"  />
+    <input name="id" value="{{ $PhotoEvent->id }}" hidden="hidden"  />
 
     <div class="fallback form-group">
         <input name="file" type="file" multiple />

@@ -72,9 +72,9 @@ class PhotoEventsController extends Controller
      */
     public function show($id)
     {
-        $photoEvent = PhotoEvent::findOrFail($id);
+        $PhotoEvent = PhotoEvent::findOrFail($id);
 
-        return view('photoevents.show', compact('photoEvent'));
+        return view('photoevents.show', compact('PhotoEvent'));
     }
 
     /**
@@ -92,10 +92,9 @@ class PhotoEventsController extends Controller
             $data = $row->toArray();
             $data['client_id'] = \Auth::user()->client_id;
             $data['photo_event_id'] = 1; // to work out how to get // change route?
-// column names must be exact // handle if they are not
+//          column names must be exact // handle if they are not
             PhotoEventParticipants::create($data);
 
-//            $row->first_name // etc
         });
         // redirect
         return redirect()->back();
