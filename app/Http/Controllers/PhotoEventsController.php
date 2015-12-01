@@ -114,6 +114,7 @@ class PhotoEventsController extends Controller
         // validate
 
         // find record by original file name
+        $participant =  PhotoEventParticipants::find('photo_original_name', $file->getClientOriginalName());
 
 
         // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick
