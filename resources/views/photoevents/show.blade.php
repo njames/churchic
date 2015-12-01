@@ -1,11 +1,11 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Photo Event :: {{ $photoEvent->name }}
+    Photo Event :: {{ $PhotoEvent->name }}
 @endsection
 
 @section('contentheader_title')
-    Photo Event :: {{ $photoEvent->name }}
+    Photo Event :: {{ $PhotoEvent->name }}
 @endsection
 
 @section('PhotoEvents-active')
@@ -27,7 +27,7 @@
 
     <h3>Upload Spreadsheet</h3>
 
-    {!! Form::open(['url' => route('PhotoEvents.loadExcel', ['eventId' => 1]), 'method' => 'POST', 'files' => true ]) !!}
+    {!! Form::open(['url' => route('PhotoEvents.loadExcel', ['eventId' => $PhotoEvent->id]), 'method' => 'POST', 'files' => true ]) !!}
 
         {!! Form::label( 'spreadsheet', 'Choose your Spreadsheet') !!}
         {!! Form::file('spreadsheet') !!}
@@ -43,7 +43,7 @@
 
     <h3>Upload Photos</h3>
 
-<form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => $PhotoEvent->id]]) }}" method="POST" class="dropzone">
+<form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => $PhotoEvent->id]) }}" method="POST" class="dropzone">
 
     {{ csrf_field() }}
 
