@@ -138,6 +138,7 @@ return [
         'Illuminate\Html\HtmlServiceProvider',
 
         'Vinkla\Hashids\HashidsServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
 
         /*
          * Application Service Providers...
@@ -207,6 +208,8 @@ return [
         'HTML'=> 'Illuminate\Html\HtmlFacade',
         'Form'=> 'Illuminate\Html\FormFacade',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Image' => 'Intervention\Image\Facades\Image'
+
 
     ],
 

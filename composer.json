@@ -17,7 +17,8 @@
     "sqrc/eventbrite": "dev-master",
 		"acacha/admin-lte-template-laravel": "1.*",
     "barryvdh/laravel-debugbar": "^2.0",
-    "maatwebsite/excel": "2.0.*"
+    "maatwebsite/excel": "2.0.*",
+		"intervention/image": "^2.3"
 
 	},
 	"require-dev": {
