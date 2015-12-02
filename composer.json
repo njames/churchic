@@ -18,7 +18,8 @@
 		"acacha/admin-lte-template-laravel": "1.*",
     "barryvdh/laravel-debugbar": "^2.0",
     "maatwebsite/excel": "2.0.*",
-		"intervention/image": "^2.3"
+		"intervention/image": "^2.3",
+		"league/flysystem": "^1.0"
 
 	},
 	"require-dev": {
