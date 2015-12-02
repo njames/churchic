@@ -3,6 +3,8 @@
 namespace sc\cic\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 use sc\cic\Models\PhotoEvent;
@@ -114,17 +116,28 @@ class PhotoEventsController extends Controller
         // validate
 
         // find record by original file name
-        $participant =  PhotoEventParticipants::find('photo_original_name', $file->getClientOriginalName());
-
+        $query =  PhotoEventParticipants::where('photo_original_name', $file->getClientOriginalName());
+        $participant = $query->get();
+//        dd($participant);
+//        Image::
 
         // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick
 
         $name = time() . $file->getClientOriginalName();
+        //$name2 = Hash::make($file->getClientOriginalName());
+
         $file->move('uploads/photos' , $name);
 
         // save smaller version
 
+        $fileUrl = "http://churchic.local/";
+        $tnFileUrl = "http://churchic.local/";
+
         // update record (or create if none created )
+        $success = $query->update(['photo_path_large' => $fileUrl,
+            'photo_path_small' => $tnFileUrl]);
+
+        if ($success);
     }
 
 
