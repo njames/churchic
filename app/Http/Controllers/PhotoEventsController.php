@@ -117,21 +117,28 @@ class PhotoEventsController extends Controller
 
         // find record by original file name
         $query =  PhotoEventParticipants::where('photo_original_name', $file->getClientOriginalName());
-        $participant = $query->get();
+        $participant = $query->first();
 //        dd($participant);
 //        Image::
 
         // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick
 
+        $path = 'uploads/photos/' . $participant->photo_event_id;
+
         $name = time() . $file->getClientOriginalName();
+        $tnName = 'tn' . $name;
+
         //$name2 = Hash::make($file->getClientOriginalName());
 
-        $file->move('uploads/photos' , $name);
+        $file->move($path, $name);
 
         // save smaller version
+        Image::make($path . '/' . $name)->resize(null, 200, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($path . '/' . $tnName);
 
-        $fileUrl = "http://churchic.local/";
-        $tnFileUrl = "http://churchic.local/";
+        $fileUrl =  url('/') . '/' . $path . '/' . $name ;
+        $tnFileUrl = url('/') . '/' . $path . '/' . $tnName ;
 
         // update record (or create if none created )
         $success = $query->update(['photo_path_large' => $fileUrl,
