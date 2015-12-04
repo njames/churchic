@@ -74,5 +74,5 @@ Route::resource('PhotoEvents', 'PhotoEventsController'  );
 Route::group(['as' => 'PhotoEvents.'], function() {
     Route::post('PhotoEvents/{eventId}/loadExcel', ['as' => 'loadExcel', 'uses' => 'PhotoEventsController@loadExcel'] );
     Route::post('PhotoEvents/{eventId}/loadPhoto', ['as' => 'loadPhoto', 'uses' => 'PhotoEventsController@loadPhoto'] );
-
+    Route::get('PhotoEvents/{eventId}/downloadExcel', ['as' => 'downloadExcel', 'uses' => 'PhotoEventsController@downloadExcel'] );
 });

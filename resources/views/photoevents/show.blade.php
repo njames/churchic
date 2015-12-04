@@ -39,6 +39,8 @@
 
 </div>
 
+<a href="{{route('PhotoEvents.downloadExcel', ['eventId' => $PhotoEvent->id])}}" target="_blank">Download csv</a>
+
 <hr>
 
     <h3>Upload Photos</h3>
