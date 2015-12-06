@@ -162,7 +162,7 @@ class PhotoEventsController extends Controller
             $constraint->aspectRatio();
         })->save($path . '/' . $tnName);
 
-        $fileUrl =  url('/') . '/' . $path . '/' . $name ;
+        $fileUrl =  public_path() . '/' . $path . '/' . $name ;
         $tnFileUrl = url('/') . '/' . $path . '/' . $tnName ;
         $email_link = route('PhotoEvents.getPhoto', ['eventId' => $participant->photo_event_id, 'hashId' => Hashids::encode($participant->id )] );
 
@@ -175,13 +175,80 @@ class PhotoEventsController extends Controller
         if ($success);
     }
 
-    public function getPhoto($id, $hashId){
+    public function getPhoto($eventId, $hashId)
+    {
 
-        $id = Hashids::encode($hashId)[0];
+        $id = Hashids::decode($hashId)[0];
 
-        PhotoEventParticipants::findOrFail($id);
+        $photo = PhotoEventParticipants::findOrFail($id);
+
+        $fullPath = $photo->photo_path_large;
+
+        // ---- clip script
 
 
+        if (headers_sent())
+            die('Headers Sent');
+
+        // Required for some browsers
+        if (ini_get('zlib.output_compression'))
+            ini_set('zlib.output_compression', 'Off');
+
+        // File Exists?
+        if (file_exists($fullPath)) {
+
+            // Parse Info / Get Extension
+            $fsize = filesize($fullPath);
+            $path_parts = pathinfo($fullPath);
+            $ext = strtolower($path_parts["extension"]);
+
+            // Determine Content Type
+            switch ($ext) {
+                case "pdf":
+                    $ctype = "application/pdf";
+                    break;
+                case "exe":
+                    $ctype = "application/octet-stream";
+                    break;
+                case "zip":
+                    $ctype = "application/zip";
+                    break;
+                case "doc":
+                    $ctype = "application/msword";
+                    break;
+                case "xls":
+                    $ctype = "application/vnd.ms-excel";
+                    break;
+                case "ppt":
+                    $ctype = "application/vnd.ms-powerpoint";
+                    break;
+                case "gif":
+                    $ctype = "image/gif";
+                    break;
+                case "png":
+                    $ctype = "image/png";
+                    break;
+                case "jpeg":
+                case "jpg":
+                    $ctype = "image/jpg";
+                    break;
+                default:
+                    $ctype = "application/force-download";
+            }
+
+            header("Pragma: public"); // required
+            header("Expires: 0");
+            header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            header("Cache-Control: private", false); // required for certain browsers
+            header("Content-Type: $ctype");
+            header("Content-Disposition: attachment; filename=\"" . basename($fullPath) . "\";");
+            header("Content-Transfer-Encoding: binary");
+            header("Content-Length: " . $fsize);
+            ob_clean();
+            flush();
+            readfile($fullPath);
+
+        }
     }
 
 
