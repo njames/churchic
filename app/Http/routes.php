@@ -78,3 +78,9 @@ Route::group(['as' => 'PhotoEvents.'], function() {
     Route::get('PhotoEvents/{eventId}/photo/{hashId}', ['as' => 'getPhoto', 'uses' => 'PhotoEventsController@getPhoto'] );
 
 });
+
+
+// config
+Route::get('/pi', function() {
+    phpinfo();
+});
