@@ -19,10 +19,12 @@ class CreatePhotoEventParticipantsTable extends Migration
             $table->string('first_name', 60);
             $table->string('last_name', 60)->nullable();
             $table->string('email', 120);
+            $table->string('mobile', 20)->nullable();
             $table->integer('assigned_number')->unsigned();
-            $table->string('photo_original_name',120)->indexed()->unique();
+            $table->string('photo_original_name',120)->indexed();
             $table->string('photo_path_large',512)->nullable();;
             $table->string('photo_path_small',512)->nullable();;
+            $table->string('email_link',512)->nullable();;
             $table->timestamps();
 
             $table->foreign('photo_event_id')->references('id')->on('photo_events')->onDelete('cascade');

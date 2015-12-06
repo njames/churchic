@@ -11,6 +11,7 @@ use sc\cic\Http\Controllers\Controller;
 use sc\cic\Models\PhotoEvent;
 use sc\cic\Models\PhotoEventParticipants;
 use sc\cic\Util\PhotoListImport;
+use Vinkla\Hashids\Facades\Hashids;
 
 class PhotoEventsController extends Controller
 {
@@ -163,13 +164,26 @@ class PhotoEventsController extends Controller
 
         $fileUrl =  url('/') . '/' . $path . '/' . $name ;
         $tnFileUrl = url('/') . '/' . $path . '/' . $tnName ;
+        $email_link = route('PhotoEvents.getPhoto', ['eventId' => $participant->photo_event_id, 'hashId' => Hashids::encode($participant->id )] );
+
 
         // update record (or create if none created )
         $success = $query->update(['photo_path_large' => $fileUrl,
-            'photo_path_small' => $tnFileUrl]);
+            'photo_path_small' => $tnFileUrl,
+            'email_link' => $email_link ] );
 
         if ($success);
     }
+
+    public function getPhoto($id, $hashId){
+
+        $id = Hashids::encode($hashId)[0];
+
+        PhotoEventParticipants::findOrFail($id);
+
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.
