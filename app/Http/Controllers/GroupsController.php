@@ -8,6 +8,14 @@ use sc\cic\Models\Group;
 class GroupsController extends Controller
 {
     /**
+     * Add Auth to this controller
+     */
+    public function __construct()
+    {
+        $this->middleware('auth'); // How to exclude..., ['except' => ['getPhoto']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return Response

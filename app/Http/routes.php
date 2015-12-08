@@ -1,48 +1,35 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
+// main page for signup / marketing etc
 Route::get('/', 'WelcomeController@index');
 
-//Route::get('home', 'HomeController@index');
-
-Route::get('/home', ['middleware' => 'auth', function () {
-
-    return view('home');
-}]);
-
+//
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
 
-// groups routes
-Route::get('groups', 'GroupsController@index');
-Route::get('groups/{id}', 'GroupsController@show');
+// App resource routes
+Route::resource('Dashboard', 'DashboardController');
+Route::resource('Groups', 'GroupsController');
+Route::resource('Config', 'SyncConfigController'); // @todo replace with Integrations
 
-Route::get('/dashboard', 'DashboardController@index');
-
-// domain routing
-Route::group(['domain' => '{clientId}.churchic.local'], function () {
-
-  Route:get('test', function ($clientId) {
-    return 'Hello '.$clientId;
-  });
-
+// photo event routes
+Route::resource('PhotoEvents', 'PhotoEventsController'  );
+Route::group(['as' => 'PhotoEvents.'], function() {
+    Route::post('PhotoEvents/{eventId}/loadExcel', ['as' => 'loadExcel', 'uses' => 'PhotoEventsController@loadExcel'] );
+    Route::post('PhotoEvents/{eventId}/loadPhoto', ['as' => 'loadPhoto', 'uses' => 'PhotoEventsController@loadPhoto'] );
+    Route::get('PhotoEvents/{eventId}/downloadExcel', ['as' => 'downloadExcel', 'uses' => 'PhotoEventsController@downloadExcel'] );
+    Route::get('PhotoEvents/{eventId}/photo/{hashId}', ['as' => 'getPhoto', 'uses' => 'PhotoEventsController@getPhoto'] );
 });
 
-Route::get('/config', 'SyncConfigController@index');
+// admin routes @todo turn into resource
+Route::get('Admin', function () {
+    return view('admin/admin-home');
+});
 
 
+// testing routes -------------------------------------------- //
 Route::get('event', function () { //'EventController@index');
 
 //  return getenv('EVENTBRITE_KEY');
@@ -60,27 +47,7 @@ Route::get('event', function () { //'EventController@index');
   dd($events);
 });
 
-
-
-// admin routes
-Route::get('admin', function () {
-    return view('admin/admin-home');
-});
-
-
-
-// photo event routes
-Route::resource('PhotoEvents', 'PhotoEventsController'  );
-Route::group(['as' => 'PhotoEvents.'], function() {
-    Route::post('PhotoEvents/{eventId}/loadExcel', ['as' => 'loadExcel', 'uses' => 'PhotoEventsController@loadExcel'] );
-    Route::post('PhotoEvents/{eventId}/loadPhoto', ['as' => 'loadPhoto', 'uses' => 'PhotoEventsController@loadPhoto'] );
-    Route::get('PhotoEvents/{eventId}/downloadExcel', ['as' => 'downloadExcel', 'uses' => 'PhotoEventsController@downloadExcel'] );
-    Route::get('PhotoEvents/{eventId}/photo/{hashId}', ['as' => 'getPhoto', 'uses' => 'PhotoEventsController@getPhoto'] );
-
-});
-
-
-// config
+// testing
 Route::get('/pi', function() {
     phpinfo();
 });
