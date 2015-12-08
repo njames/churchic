@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <!-- search form (Optional) -->
+        <!-- search form (Optional) - - >
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -25,14 +25,15 @@
               </span>
             </div>
         </form>
+        < ! - - commented for now -->
         <!-- /.search form -->
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">Menu</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class=""><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li><a href="{{ url('groups') }}"><i class='fa fa-link'></i> <span>Groups</span></a></li>
+            <li class=""><a href="{{ url('Dashboard') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
+            <li><a href="{{ url('Groups') }}"><i class='fa fa-link'></i> <span>Groups</span></a></li>
             <li @yield('PhotoEvents-active') ><a href="{{ url('PhotoEvents') }}"><i class='fa fa-link'></i> <span>Photo Events</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Multi-level</span> <i class="fa fa-angle-left pull-right"></i></a>
