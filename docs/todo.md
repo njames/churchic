@@ -10,3 +10,7 @@
 ## FEAT-Marketing
 . new splash page with signup for more info
 . 
+
+## Infrastructure
+. mail connection to mandrill
+. 

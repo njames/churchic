@@ -13,10 +13,10 @@ class CreateGroupParticipantsTable extends Migration
         Schema::create('group_participants', function (Blueprint $table) {
 
         $table->increments('id');
-            $table->string('client_id', 30)->index();
+        $table->string('client_id', 30)->index();
         $table->integer('group_id')->index();
         $table->integer('participant_id')->index();
-            $table->string('first_name', 60)->nullable();
+        $table->string('first_name', 60)->nullable();
         $table->string('last_name', 60)->nullable();
         $table->string('full_name', 120)->nullable();
         $table->string('email', 120)->nullable();
@@ -27,8 +27,8 @@ class CreateGroupParticipantsTable extends Migration
         $table->dateTime('date_joined')->nullable();
         $table->string('mc_euid', 10)->nullable();
         $table->string('mc_leid', 10)->nullable();
-        $table->string('lastUpdatedBy', 20)->nullable();
-            $table->timestamps();
+        $table->string('last_updated_by', 20)->nullable();
+        $table->timestamps();
 
         });
     }

@@ -17,7 +17,8 @@ class CreateSyncConfigTable extends Migration
             $table->string('from_group', 20);
             $table->string('to_service', 20);
             $table->string('to_group', 20);
-            $table->date('last_run');
+            $table->integer('run_every')->default(1440);; // number of minutes
+            $table->timestamp('last_run');
             $table->timestamps();
         });
     }
