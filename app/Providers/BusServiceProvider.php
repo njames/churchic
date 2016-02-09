@@ -14,11 +14,12 @@ class BusServiceProvider extends ServiceProvider
      */
     public function boot(Dispatcher $dispatcher)
     {
-        $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping(
-                $command, 'sc\cic\Commands', 'sc\cic\Handlers\Commands'
-            );
-        });
+// @figure out where this goes
+//        $dispatcher->mapUsing(function ($command) {
+//            return Dispatcher::simpleMapping(
+//                $command, 'sc\cic\Commands', 'sc\cic\Handlers\Commands'
+//            );
+//        });
     }
 
     /**
