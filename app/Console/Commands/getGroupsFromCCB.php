@@ -95,7 +95,7 @@ class getGroupsFromCCB extends CicCommand
     {
         $args = parent::getOptions();
 
-        array_push($args, ['ChangedSince', null, InputOption::VALUE_OPTIONAL, 'Get all the groups changed after this date. Format yyy-mmm-dd.', '1970-01-01']);
+        array_push($args, ['ChangedSince', null, InputOption::VALUE_OPTIONAL, 'Get all the groups changed after this date. Format yyyy-mmm-dd.', '1970-01-01']);
 
         return $args;
     }

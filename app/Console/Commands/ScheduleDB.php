@@ -3,6 +3,7 @@
 namespace sc\cic\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use sc\cic\Models\SyncConfig;
 use Carbon\Carbon;
 use Log;
@@ -50,9 +51,14 @@ class ScheduleDB extends Command
 
             $now = Carbon::now();
 
-            if($now->gt($item->last_run->addMinutes($item->minutes))){
+            if($now->gt($item->last_run->addMinutes($item->run_every))){
 
                 Log::info('Hello ' . $item->clientid  . ' running ' . $item->command);
+
+                $exitCode = Artisan::call( $item->command, [
+                    'client' => $item->client_id,
+                    'ChangedSince' => $item->last_run->toDateTimeString()
+                ]);
 
                 $item->last_run = $now;
 
