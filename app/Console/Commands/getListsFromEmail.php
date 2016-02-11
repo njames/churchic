@@ -5,6 +5,7 @@ namespace Cic\Console\Commands;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Cic\Api\Mailer\Mailchimp\Mailer;
 
 class getListsFromEmail extends CicCommand
 {
@@ -38,16 +39,14 @@ class getListsFromEmail extends CicCommand
     public function fire()
     {
         parent::fire();
-         // push to mail program
-     $this->info('Starting to Sync to email program');
 
-        $mcLists = new \Mailchimp_Lists($this->mailchimp);
+         $this->info('Starting to Sync to email program');
 
-//     $mcLists->list()
+        $mc = new Mailer($this->client);
 
-     $lists = $mcLists->getList();
+        $lists = $mc->getLists();
 
-        dd($lists);
+        dd($lists['lists']);
     }
 
    /**

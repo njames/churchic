@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Cic\ApiHelpers\CcbApi;
+use Cic\Api\Ccb\CcbApi;
 use Cic\Models\ClientConnection;
 //use Vinkla\Hashids\HashidsManager;
 use Illuminate\Support\Facades\Log;
@@ -34,7 +34,7 @@ class CicCommand extends Command
 
     protected $ccbApi;
     protected $hashids;
-    protected $mailchimp;
+
 
     /**
      * Create a new command instance.
@@ -65,11 +65,7 @@ class CicCommand extends Command
 
         $this->ccbApi = new CcbApi($clientConnection->client_id, $clientConnection->username, $clientConnection->password);
 
-        $clientConnection = ClientConnection::where('client_id', '=', $this->client)
-                                          ->where('source_name', '=', 'Mailchimp')->first();
-
-        $this->mailchimp = new \Mailchimp($clientConnection->apikey);
-    }
+}
 
   /**
    * Tidy up after the fire has finished.

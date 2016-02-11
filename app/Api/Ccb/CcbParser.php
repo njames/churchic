@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\ApiHelpers;
+namespace Cic\Api\Ccb;
 
 use Carbon\Carbon;
 use Cic\Models\Individual;
