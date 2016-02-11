@@ -30,6 +30,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('schedule:db')->everyTenMinutes();
+        $schedule->command('schedule:db')->everyMinute();
     }
 }

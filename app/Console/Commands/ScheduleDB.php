@@ -57,7 +57,7 @@ class ScheduleDB extends Command
 
                 $exitCode = Artisan::call( $item->command, [
                     'client' => $item->client_id,
-                    'ChangedSince' => $item->last_run->toDateTimeString()
+                    '--ChangedSince' => $item->last_run->toDateTimeString()
                 ]);
 
                 $item->last_run = $now;
