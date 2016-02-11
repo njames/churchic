@@ -1,11 +1,11 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use sc\cic\ApiHelpers\CcbParser;
+use Cic\ApiHelpers\CcbParser;
 
 class getIndividualsFromCCB extends CicCommand
 {
@@ -49,8 +49,8 @@ class getIndividualsFromCCB extends CicCommand
             return 1;
         } // @todo handle xml failure better
 
-    // this should be refactored into its own class
-    CcbParser::parseIndividuals($sxe, $this->client);
+        // this should be refactored into its own class
+        CcbParser::parseIndividuals($sxe, $this->client);
 
         $this->tidyUp();
     }

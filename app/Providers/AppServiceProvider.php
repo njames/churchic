@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Providers;
+namespace Cic\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             'Illuminate\Contracts\Auth\Registrar',
-            'sc\cic\Services\Registrar'
+            'Cic\Services\Registrar'
         );
 
 

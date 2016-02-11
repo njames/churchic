@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Console;
+namespace Cic\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,14 +13,14 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'sc\cic\Console\Commands\Inspire',
-        'sc\cic\Console\Commands\getGroupParticipantsFromCCB',
-        'sc\cic\Console\Commands\getGroupsFromCCB',
-        'sc\cic\Console\Commands\getIndividualsFromCCB',
-        'sc\cic\Console\Commands\getIndividualsFromCCBInitial',
-        'sc\cic\Console\Commands\putGroupParticipantsToEmail',
-        'sc\cic\Console\Commands\getListsFromEmail',
-        'sc\cic\Console\Commands\ScheduleDB',
+        'Cic\Console\Commands\Inspire',
+        'Cic\Console\Commands\getGroupParticipantsFromCCB',
+        'Cic\Console\Commands\getGroupsFromCCB',
+        'Cic\Console\Commands\getIndividualsFromCCB',
+        'Cic\Console\Commands\getIndividualsFromCCBInitial',
+        'Cic\Console\Commands\putGroupParticipantsToEmail',
+        'Cic\Console\Commands\getListsFromEmail',
+        'Cic\Console\Commands\ScheduleDB',
     ];
 
     /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 
-use sc\cic\Models\Group;
+use Cic\Models\Group;
 
 class GroupsController extends Controller
 {

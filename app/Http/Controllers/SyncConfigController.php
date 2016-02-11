@@ -1,9 +1,9 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 
-use sc\cic\Models\SyncConfig;
+use Cic\Models\SyncConfig;
 
 class SyncConfigController extends Controller
 {

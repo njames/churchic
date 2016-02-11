@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Http;
+namespace Cic\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -17,7 +17,7 @@ class Kernel extends HttpKernel
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
-        'sc\cic\Http\Middleware\VerifyCsrfToken',
+        'Cic\Http\Middleware\VerifyCsrfToken',
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => 'sc\cic\Http\Middleware\Authenticate',
+        'auth' => 'Cic\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest' => 'sc\cic\Http\Middleware\RedirectIfAuthenticated',
+        'guest' => 'Cic\Http\Middleware\RedirectIfAuthenticated',
     ];
 }

@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: sc\cic
-        psr4_prefix: sc\cic
+        namespace: Cic
+        psr4_prefix: Cic
         src_path: app

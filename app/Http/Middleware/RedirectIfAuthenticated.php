@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Http\Middleware;
+namespace Cic\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

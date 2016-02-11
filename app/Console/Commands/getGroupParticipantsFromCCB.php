@@ -1,12 +1,12 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use sc\cic\Models\Group;
-use sc\cic\Models\GroupParticipant;
+use Cic\Models\Group;
+use Cic\Models\GroupParticipant;
 
 class getGroupParticipantsFromCCB extends CicCommand
 {

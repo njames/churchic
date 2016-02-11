@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 class WelcomeController extends Controller
 {

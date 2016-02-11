@@ -1,16 +1,16 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use Maatwebsite\Excel\Facades\Excel;
-use sc\cic\Http\Requests;
-use sc\cic\Http\Controllers\Controller;
-use sc\cic\Models\PhotoEvent;
-use sc\cic\Models\PhotoEventParticipants;
-use sc\cic\Util\PhotoListImport;
+use Cic\Http\Requests;
+use Cic\Http\Controllers\Controller;
+use Cic\Models\PhotoEvent;
+use Cic\Models\PhotoEventParticipants;
+use Cic\Util\PhotoListImport;
 use Vinkla\Hashids\Facades\Hashids;
 
 class PhotoEventsController extends Controller

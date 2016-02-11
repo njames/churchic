@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Http\Requests;
+namespace Cic\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

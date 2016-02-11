@@ -1,10 +1,10 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
-use sc\cic\Models\SyncConfig;
+use Cic\Models\SyncConfig;
 use Carbon\Carbon;
 use Log;
 

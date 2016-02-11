@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use sc\cic\Models\SyncConfig;
+use Cic\Models\SyncConfig;
 use Carbon\Carbon;
 
 class SyncConfigSeeder extends Seeder

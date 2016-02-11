@@ -1,9 +1,9 @@
 <?php
 
-namespace sc\cic\ApiHelpers;
+namespace Cic\ApiHelpers;
 
 use Carbon\Carbon;
-use sc\cic\Models\Individual;
+use Cic\Models\Individual;
 use Vinkla\Hashids\Facades\Hashids;
 
 /**

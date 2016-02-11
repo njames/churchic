@@ -1,13 +1,13 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use sc\cic\ApiHelpers\CcbApi;
-use sc\cic\Models\ClientConnection;
+use Cic\ApiHelpers\CcbApi;
+use Cic\Models\ClientConnection;
 //use Vinkla\Hashids\HashidsManager;
 use Illuminate\Support\Facades\Log;
 

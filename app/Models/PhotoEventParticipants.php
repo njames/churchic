@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Models;
+namespace Cic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +14,6 @@ class PhotoEventParticipants extends Model
 
     public function PhotoEvent()
     {
-        return $this->belongsTo('sc\cic\Models\PhotoEvents');
+        return $this->belongsTo('Cic\Models\PhotoEvents');
     }
 }

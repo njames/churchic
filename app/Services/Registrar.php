@@ -1,8 +1,8 @@
 <?php
 
-namespace sc\cic\Services;
+namespace Cic\Services;
 
-use sc\cic\Models\User;
+use Cic\Models\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Exceptions;
+namespace Cic\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

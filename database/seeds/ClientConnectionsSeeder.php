@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use sc\cic\Models\ClientConnection;
+use Cic\Models\ClientConnection;
 
 /**
  * @author nigeljames

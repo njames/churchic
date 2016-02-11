@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Events;
+namespace Cic\Events;
 
 abstract class Event
 {

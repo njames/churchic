@@ -1,10 +1,10 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use sc\cic\ApiHelpers\CcbParser;
+use Cic\ApiHelpers\CcbParser;
 
 class getIndividualsFromCCBInitial extends CicCommand
 {

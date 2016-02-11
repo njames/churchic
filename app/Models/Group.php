@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Models;
+namespace Cic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

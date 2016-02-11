@@ -1,4 +1,4 @@
-<?php  namespace sc\cic\Util;
+<?php  namespace Cic\Util;
 
 use \Maatwebsite\Excel\Files\ExcelFile;
 use Input;

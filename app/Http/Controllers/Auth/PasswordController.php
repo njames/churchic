@@ -1,8 +1,8 @@
 <?php
 
-namespace sc\cic\Http\Controllers\Auth;
+namespace Cic\Http\Controllers\Auth;
 
-use sc\cic\Http\Controllers\Controller;
+use Cic\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;

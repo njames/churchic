@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Providers;
+namespace Cic\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'sc\cic\Http\Controllers';
+    protected $namespace = 'Cic\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

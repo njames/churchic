@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 class HomeController extends Controller
 {

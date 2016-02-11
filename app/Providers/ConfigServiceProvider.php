@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Providers;
+namespace Cic\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

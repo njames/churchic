@@ -1,8 +1,8 @@
 <?php
 
-namespace sc\cic\Jobs;
+namespace Cic\Jobs;
 
-use sc\cic\Jobs\Job;
+use Cic\Jobs\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;

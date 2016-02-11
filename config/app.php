@@ -141,12 +141,12 @@ return [
         /*
          * Application Service Providers...
          */
-        sc\cic\Providers\AppServiceProvider::class,
-        sc\cic\Providers\AuthServiceProvider::class,
-        sc\cic\Providers\BusServiceProvider::class,
-        sc\cic\Providers\ConfigServiceProvider::class,
-        sc\cic\Providers\EventServiceProvider::class,
-        sc\cic\Providers\RouteServiceProvider::class,
+        Cic\Providers\AppServiceProvider::class,
+        Cic\Providers\AuthServiceProvider::class,
+        Cic\Providers\BusServiceProvider::class,
+        Cic\Providers\ConfigServiceProvider::class,
+        Cic\Providers\EventServiceProvider::class,
+        Cic\Providers\RouteServiceProvider::class,
 
         /*
          * Other service providers

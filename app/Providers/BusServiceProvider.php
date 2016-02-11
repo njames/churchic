@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\Providers;
+namespace Cic\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -17,7 +17,7 @@ class BusServiceProvider extends ServiceProvider
 // @figure out where this goes
 //        $dispatcher->mapUsing(function ($command) {
 //            return Dispatcher::simpleMapping(
-//                $command, 'sc\cic\Commands', 'sc\cic\Handlers\Commands'
+//                $command, 'Cic\Commands', 'Cic\Handlers\Commands'
 //            );
 //        });
     }

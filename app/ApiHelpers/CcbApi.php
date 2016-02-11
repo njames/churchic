@@ -1,6 +1,6 @@
 <?php
 
-namespace sc\cic\ApiHelpers;
+namespace Cic\ApiHelpers;
 
 use GuzzleHttp\Client;
 

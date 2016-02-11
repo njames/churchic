@@ -34,7 +34,7 @@
 			"database"
 		],
 		"psr-4": {
-			"sc\\cic\\": "app/"
+			"Cic\\": "app/"
 		}
 	},
 	"autoload-dev": {

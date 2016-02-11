@@ -1,11 +1,11 @@
 <?php
 
-namespace sc\cic\Http\Controllers;
+namespace Cic\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sc\cic\Http\Requests;
-use sc\cic\Http\Controllers\Controller;
+use Cic\Http\Requests;
+use Cic\Http\Controllers\Controller;
 
 class UploadController extends Controller
 {

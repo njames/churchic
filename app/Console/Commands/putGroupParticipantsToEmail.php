@@ -1,11 +1,11 @@
 <?php
 
-namespace sc\cic\Console\Commands;
+namespace Cic\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use sc\cic\Models\GroupParticipant;
+use Cic\Models\GroupParticipant;
 use Illuminate\Support\Facades\Log;
 
 class putGroupParticipantsToEmail extends CicCommand
