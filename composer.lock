@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8db521983c08a4d7cae1bcf6e4561beb",
-    "content-hash": "ad993fbcfedf2924ff48d4ea70b87809",
+    "hash": "ac121f15e1e91efd9de0ce2e0e7317b7",
+    "content-hash": "23065db8e145e52bbfe2b974727fa317",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -266,6 +266,48 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "drewm/mailchimp-api",
+            "version": "v2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drewm/mailchimp-api.git",
+                "reference": "a9bf617afb5a9bcb2601f5cc23b01a7b581d5659"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/a9bf617afb5a9bcb2601f5cc23b01a7b581d5659",
+                "reference": "a9bf617afb5a9bcb2601f5cc23b01a7b581d5659",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*",
+                "vlucas/phpdotenv": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DrewM\\MailChimp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Drew McLellan",
+                    "email": "drew.mclellan@gmail.com",
+                    "homepage": "http://allinthehead.com/"
+                }
+            ],
+            "description": "Super-simple, minimum abstraction MailChimp API v3 wrapper",
+            "homepage": "https://github.com/drewm/mailchimp-api",
+            "time": "2016-01-30 16:12:54"
         },
         {
             "name": "graham-campbell/manager",
@@ -1458,52 +1500,6 @@
             "time": "2015-10-26 10:15:37"
         },
         {
-            "name": "mailchimp/mailchimp",
-            "version": "2.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/mailchimp/mailchimp-api-php.git",
-                "reference": "7ac99b5ac746d5875c5c350ad7e3b83674c83ec1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/mailchimp/mailchimp-api-php/get/7ac99b5ac746d5875c5c350ad7e3b83674c83ec1.zip",
-                "reference": "7ac99b5ac746d5875c5c350ad7e3b83674c83ec1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "apigen/apigen": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mailchimp": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "MailChimp Devs",
-                    "email": "api@mailchimp.com",
-                    "homepage": "http://mailchimp.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "API client library for the MailChimp bulk email as a service platform",
-            "homepage": "https://bitbucket.org/mailchimp/mailchimp-api-php",
-            "keywords": [
-                "api",
-                "email"
-            ],
-            "time": "2014-10-30 20:38:12"
-        },
-        {
             "name": "maximebf/debugbar",
             "version": "v1.11.0",
             "source": {
@@ -2135,16 +2131,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v3.8.0",
+            "version": "v3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "9eb9cb699254d738a39067854ac74c6f178c661e"
+                "reference": "81bea2927de98045b7f1b660d274e17deda713c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/9eb9cb699254d738a39067854ac74c6f178c661e",
-                "reference": "9eb9cb699254d738a39067854ac74c6f178c661e",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/81bea2927de98045b7f1b660d274e17deda713c2",
+                "reference": "81bea2927de98045b7f1b660d274e17deda713c2",
                 "shasum": ""
             },
             "require": {
@@ -2186,7 +2182,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2016-02-08 17:28:39"
+            "time": "2016-02-10 02:19:11"
         },
         {
             "name": "swiftmailer/swiftmailer",

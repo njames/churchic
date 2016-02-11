@@ -8,7 +8,7 @@
 		"laravel/framework": "5.2.*",
     "guzzlehttp/guzzle": "5.*",
     "guzzlehttp/oauth-subscriber": "*",
-		"mailchimp/mailchimp": "~2.0",
+    "drewm/mailchimp-api" : "~2.1",
 		"pda/pheanstalk": "~2.1",
     "vinkla/hashids":"~1.0",
     "laravel/socialite": "~2.0",
