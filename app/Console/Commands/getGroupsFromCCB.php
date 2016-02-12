@@ -40,9 +40,9 @@ class getGroupsFromCCB extends CicCommand
     {
         parent::fire();
 
-        $this->info('Updating groups changed since: '.$this->option('ChangedSince'));
+        $this->info('Updating groups changed since: '.$this->config->last_run->toDateTimeString());
 
-        $resp = $this->ccbApi->groupProfiles($this->option('ChangedSince'));
+        $resp = $this->ccbApi->groupProfiles($this->config->last_run->toDateTimeString() );
 
         $sxe = $this->parseXml($resp);
 

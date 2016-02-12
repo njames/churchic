@@ -53,11 +53,11 @@ class ScheduleDB extends Command
 
             if($now->gt($item->last_run->addMinutes($item->run_every))){
 
-                Log::info('Hello ' . $item->clientid  . ' running ' . $item->command);
+                Log::info('Scheduled Task for:' . $item->clientid  . ' running ' . $item->command);
 
-                $exitCode = Artisan::call( $item->command, [
+                $exitCode = $this->call( $item->command, [
                     'client' => $item->client_id,
-                    '--ChangedSince' => $item->last_run->toDateTimeString()
+                    '--config' => $item->id
                 ]);
 
                 $item->last_run = $now;

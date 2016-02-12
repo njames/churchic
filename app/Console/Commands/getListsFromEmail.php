@@ -40,13 +40,16 @@ class getListsFromEmail extends CicCommand
     {
         parent::fire();
 
-         $this->info('Starting to Sync to email program');
+        $this->info('Starting to Sync to email program');
 
         $mc = new Mailer($this->client);
 
         $lists = $mc->getLists();
 
-        dd($lists['lists']);
+
+//        eval(\Psy\sh());
+
+//        dd($lists['lists']);
     }
 
    /**

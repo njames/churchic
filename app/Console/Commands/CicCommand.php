@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Cic\Api\Ccb\CcbApi;
 use Cic\Models\ClientConnection;
+use Cic\Models\SyncConfig;
 //use Vinkla\Hashids\HashidsManager;
 use Illuminate\Support\Facades\Log;
 
@@ -35,6 +36,8 @@ class CicCommand extends Command
     protected $ccbApi;
     protected $hashids;
 
+    protected $config;
+
 
     /**
      * Create a new command instance.
@@ -53,6 +56,7 @@ class CicCommand extends Command
     {
         $this->start();
         $this->client = $this->argument('client');
+        $this->config = SyncConfig::find( $this->argument('config') );
         $this->setApis();
     }
     protected function setApis()
@@ -88,6 +92,7 @@ class CicCommand extends Command
     {
         return array(
             array('client', InputArgument::REQUIRED, 'Client id to run this commmand as'),
+            array('config', InputArgument::REQUIRED, 'Config id from the database'),
         );
     }
 

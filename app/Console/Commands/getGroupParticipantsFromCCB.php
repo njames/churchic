@@ -2,6 +2,7 @@
 
 namespace Cic\Console\Commands;
 
+use Cic\Models\SyncConfig;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -40,34 +41,39 @@ class getGroupParticipantsFromCCB extends CicCommand
     public function fire()
     {
         //
-     parent::fire();
+        parent::fire();
 
-        $groupsToUpdate = Group::where('client_id', '=', $this->client)
-                         ->where('sync', '=', true)->get();
+//        $groupsToUpdate = SyncConfig::where('client_id', '=', $this->client)
+//                         ->where('sync', '=', true)->get();
+
+        $groupsToUpdate = [ $this->config->from_group ];
 
         foreach ($groupsToUpdate as $group) {
-            $this->info("Getting participants for Group: $group->group_id for client $this->client");
+            $this->info("Getting participants for Group: $group for client $this->client");
 
-            $resp = $this->ccbApi->groupParticipantsByGroupId($group->group_id);
+            $resp = $this->ccbApi->groupParticipantsByGroupId($group);
 
             $sxe = $this->parseXml($resp);
 
             foreach ($sxe->response->groups->group->participants->participant as $participant) {
                 $dbParticipant = GroupParticipant::where('client_id', '=', $this->client)
-           ->where('group_id', '=', $group->group_id)
-           ->where('participant_id', '=', $participant->attributes())
-           ->first(); // only one row to get
+               ->where('group_id', '=', $group)
+               ->where('participant_id', '=', $participant->attributes())
+               ->first(); // only one row to get
 
-         if (!$dbParticipant) {
-             $dbParticipant = new GroupParticipant();
-         }
+                if (!$dbParticipant) {
+                    $dbParticipant = new GroupParticipant();
+                }
+
+//                eval(\Psy\sh());
+
 
                 $dbParticipant->client_id = $this->client;
-                $dbParticipant->group_id = $group->group_id;
+                $dbParticipant->group_id = $group;
                 $dbParticipant->participant_id = $participant->attributes();
- //        $dbParticipant->first_name = $participant->first_name;
- //        $dbParticipant->last_name = $participant->last_name;
-         $dbParticipant->full_name = $participant->name;
+//        $dbParticipant->first_name = $participant->first_name;
+//        $dbParticipant->last_name = $participant->last_name;
+                $dbParticipant->full_name = $participant->name;
                 $dbParticipant->email = $participant->email;
                 $dbParticipant->mobile_phone = $participant->mobile_phone;
                 $dbParticipant->receive_email_from_church = $participant->receive_email_from_church;
@@ -82,7 +88,7 @@ class getGroupParticipantsFromCCB extends CicCommand
                     $this->info("$participant->name ");
                 } catch (Exception $e) {
                     // log the exception and continue
-           Log::error($e);
+               Log::error($e);
                     $this->error("$participant->name ");
                 }
             }
