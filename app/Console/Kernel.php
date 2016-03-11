@@ -20,6 +20,7 @@ class Kernel extends ConsoleKernel
         'Cic\Console\Commands\getIndividualsFromCCBInitial',
         'Cic\Console\Commands\putGroupParticipantsToEmail',
         'Cic\Console\Commands\getListsFromEmail',
+        'Cic\Console\Commands\setListsToEmail',
         'Cic\Console\Commands\ScheduleDB',
     ];
 

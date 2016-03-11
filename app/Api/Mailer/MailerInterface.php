@@ -43,4 +43,13 @@ interface MailerInterface {
      */
     public function batchUnsubscribe($ListId, $Emails);
 
+    /**
+     * @param $ListId
+     * @param $Emails
+     * @return mixed
+     */
+    public function batchUpdate($ListId, $Emails);
+
+    public function checkBatch($batch);
+
 }

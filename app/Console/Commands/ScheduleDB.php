@@ -57,7 +57,7 @@ class ScheduleDB extends Command
 
                 $exitCode = $this->call( $item->command, [
                     'client' => $item->client_id,
-                    '--config' => $item->id
+                    'config' => $item->id
                 ]);
 
                 $item->last_run = $now;

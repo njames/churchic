@@ -57,16 +57,57 @@ class Mailer implements MailerInterface {
      */
     public function batchSubscribe($ListId, $Emails)
     {
-        // TODO: Implement batchSubscribe() method.
+        $batch = $this->mailchimp->new_batch();
+        $operation  = 0;
+
+        foreach ($Emails as $Email) {
+            $operation++;
+            $batch->post( 'BS' . $operation , "lists/$ListId/members", [
+                'email_address' => $Email->email,
+                'status' => 'subscribed',
+            ]);
+        }
+
+        return $batch->execute();
+
+    }
+
+    public function batchUpdate($ListId, $Emails){
+
     }
 
     /**
      * @param $ListId
      * @param $Emails
-     * @return mixed
+     * @return $batchId to use later with checkBatch
      */
     public function batchUnsubscribe($ListId, $Emails)
     {
-        // TODO: Implement batchUnsubscribe() method.
+        $batch = $this->mailchimp->new_batch();
+        $operation  = 0;
+
+        foreach ($Emails as $Email) {
+            $hash = $this->mailchimp->subscriberHash($Email->email);
+            $operation++;
+            $batch->delete( 'BD' . $operation , "lists/$ListId/members/$hash");
+        }
+
+
+//        eval(\Psy\sh());
+        return $batch->execute();
+
+    }
+
+    /**
+     * @param $batchId
+     * @return mixed
+     */
+    public function checkBatch($batchId){
+
+        $batch = $this->mailchimp->new_batch($batchId);
+
+       return $batch->check_status();
+
+//        eval(\Psy\sh());
     }
 }

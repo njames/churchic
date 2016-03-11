@@ -39,9 +39,9 @@ class getIndividualsFromCCB extends CicCommand
     {
         parent::fire();
 
-        $this->info('Updating individuals changed since: '.$this->option('ChangedSince'));
+        $this->info('Updating individuals changed since: '.$this->config->last_run );
 
-        $resp = $this->ccbApi->individualProfiles($this->option('ChangedSince'));
+        $resp = $this->ccbApi->individualProfiles($this->config->last_run );
 
         $sxe = $this->parseXml($resp);
 

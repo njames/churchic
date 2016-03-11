@@ -102,7 +102,7 @@ class CcbParser
             } catch (\Exception $e) {
             }
         }
-        \Log::info("Date $returnDate");
+//        \Log::info("Date $returnDate");
 
         return $returnDate;
     }
