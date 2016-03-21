@@ -42,28 +42,56 @@ class Mailer implements MailerInterface {
     }
 
     /**
-     * @param $ListId
+     * @param $listId
      * @return mixed
      */
-    public function getListMembers($ListId)
+    public function getListMembers($listId)
     {
-        return $this->mailchimp->get("/lists/$ListId/members");
+        return $this->mailchimp->get("/lists/$listId/members");
+    }
+
+
+    /**
+     * @param $listId
+     * @param $email
+     */
+    public function subscribe($listId, $email)
+    {
+
     }
 
     /**
-     * @param $ListId
-     * @param $Emails
+     * @param $listId
+     * @param $email
+     */
+    public function unSubscribe($listId, $email)
+    {
+
+    }
+
+    /**
+     * @param $listId
+     * @param $email
+     */
+    public function update($listId, $email)
+    {
+
+    }
+
+    /**
+     * @param $listId
+     * @param $emails
      * @return mixed
      */
-    public function batchSubscribe($ListId, $Emails)
+    public function batchSubscribe($listId, $emails)
     {
         $batch = $this->mailchimp->new_batch();
         $operation  = 0;
 
-        foreach ($Emails as $Email) {
+        foreach ($emails as $email) {
             $operation++;
-            $batch->post( 'BS' . $operation , "lists/$ListId/members", [
-                'email_address' => $Email->email,
+            $batch->post( 'BS' . $operation , "lists/$listId/members", [
+                'email_address' => $email->email,
                 'status' => 'subscribed',
             ]);
         }
@@ -72,24 +100,31 @@ class Mailer implements MailerInterface {
 
     }
 
-    public function batchUpdate($ListId, $Emails){
+    /**
+     * @param $listId
+     * @param $emails
+     */
+    public function batchUpdate($listId, $emails){
+
+
+
 
     }
 
     /**
-     * @param $ListId
-     * @param $Emails
+     * @param $listId
+     * @param $emails
      * @return $batchId to use later with checkBatch
      */
-    public function batchUnsubscribe($ListId, $Emails)
+    public function batchUnsubscribe($listId, $emails)
     {
         $batch = $this->mailchimp->new_batch();
         $operation  = 0;
 
-        foreach ($Emails as $Email) {
-            $hash = $this->mailchimp->subscriberHash($Email->email);
+        foreach ($emails as $email) {
+            $hash = $this->mailchimp->subscriberHash($email->email);
             $operation++;
-            $batch->delete( 'BD' . $operation , "lists/$ListId/members/$hash");
+            $batch->delete( 'BD' . $operation , "lists/$listId/members/$hash");
         }
 
 

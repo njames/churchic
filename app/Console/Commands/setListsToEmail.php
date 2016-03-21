@@ -50,29 +50,35 @@ class setListsToEmail extends CicCommand
         // get all the emails from the group
         $gp = GroupParticipant::where('group_id', '=', $this->config->from_group )
                 ->whereNotNull('email')
+                ->where('email', '<>', "")
                 ->where('updated_at', '>', $this->config->last_run)
                 ->get();
 
+
+
         // create a batch and push them
-        $batchId = $mc->batchSubscribe($this->config->to_group, $gp);
+//        $batchId = $mc->batchSubscribe($this->config->to_group, $gp);
 
-//        $this->info("Subscribing from list" . $this->config->to_group . " with batch " . $batchId);
-        eval(\Psy\sh());
+//        $this->info("Subscribing from list" . $this->config->to_group . " with batch " . $batchId['id']);
 
-//         // get all the emails from the group to unsubscribe
-//        $gp = GroupParticipant::where('group_id', '=', $this->config->from_group )
-//                ->whereNotNull('email')
-////                ->where('updated_at', '>', $this->config->last_run)
-//                ->where('receive_email_from_group',  '=', false )
-//                ->get();
-//
-//        $batchId = $mc->batchUnsubscribe($this->config->to_group, $gp);
-//
-//        $this->info("Unsubscribing from list" . $this->config->to_group . " with batch " .  $batchId);
-//
-//        $result = $mc->checkBatch($batchId);
-//        dd($result);
+
+         // get all the emails from the group to unsubscribe
+        $gp = GroupParticipant::where('group_id', '=', $this->config->from_group )
+                ->whereNotNull('email')
+                ->where('email', '<>', "")
+//                ->where('updated_at', '>', $this->config->last_run)
+                ->where('receive_email_from_group',  '=', false )
+                ->get();
+
 //        eval(\Psy\sh());
+        $batchId = $mc->batchUnsubscribe($this->config->to_group, $gp);
+
+//        eval(\Psy\sh());
+        $this->info("Unsubscribing from list" . $this->config->to_group . " with batch " .  $batchId['id'] );
+
+        $result = $mc->checkBatch($batchId['id']);
+        dd($result);
+
     }
 
     /**

@@ -52,4 +52,22 @@ interface MailerInterface {
 
     public function checkBatch($batch);
 
+    /**
+     * @param $listId
+     * @param $email
+     */
+    public function subscribe($listId, $email);
+
+    /**
+     * @param $listId
+     * @param $email
+     */
+    public function unSubscribe($listId, $email);
+
+    /**
+     * @param $listId
+     * @param $email
+     */
+    public function update($listId, $email);
+
 }
