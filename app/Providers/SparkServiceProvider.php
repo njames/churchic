@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Cic\Providers;
 
 use Laravel\Spark\Spark;
 use Laravel\Spark\Providers\AppServiceProvider as ServiceProvider;

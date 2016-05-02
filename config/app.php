@@ -151,17 +151,17 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Cic\Providers\AppServiceProvider::class,
+        Cic\Providers\AuthServiceProvider::class,
+        Cic\Providers\EventServiceProvider::class,
+        Cic\Providers\RouteServiceProvider::class,
 
         /*
          * Spark
          */
         Laravel\Spark\Providers\SparkServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
-        App\Providers\SparkServiceProvider::class,
+        Cic\Providers\SparkServiceProvider::class,
 
     ],
 

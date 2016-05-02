@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Cic;
 
 use Laravel\Spark\Team as SparkTeam;
 
