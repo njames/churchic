@@ -4,3 +4,11 @@
 Homestead.yaml
 Homestead.json
 .env
+/tests/data
+*.sublime-project
+*.sublime-workspace
+/.idea
+*.iml
+/public/uploads
+/storage/uploads
+phpinfo.php

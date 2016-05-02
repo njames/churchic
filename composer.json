@@ -1,14 +1,26 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "name": "njames/churchic",
+    "description": "Church Integration",
+    "keywords": ["church", "integration", "middleware"],
+    "license": "Commercial",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravel/spark": "^1.0",
-        "laravel/cashier": "^6.0"
+        "laravel/cashier": "^6.0",
+        "guzzlehttp/guzzle": "5.*",
+        "guzzlehttp/oauth-subscriber": "*",
+        "drewm/mailchimp-api" : "~2.1",
+        "pda/pheanstalk": "~2.1",
+        "vinkla/hashids":"~1.0",
+        "laravel/socialite": "~2.0",
+        "laravelcollective/html": "5.*",
+        "barryvdh/laravel-debugbar": "^2.0",
+        "maatwebsite/excel": "2.0.*",
+        "intervention/image": "^2.3",
+        "league/flysystem": "^1.0"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
