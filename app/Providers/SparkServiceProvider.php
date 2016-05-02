@@ -41,7 +41,7 @@ class SparkServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $usesApi = true;
+    protected $usesApi = false;
 
     /**
      * Finish configuring Spark for the application.
@@ -62,5 +62,15 @@ class SparkServiceProvider extends ServiceProvider
             ->features([
                 'First', 'Second', 'Third'
             ]);
+    }
+
+    /**
+     * update spark model locations
+     */
+    public function register()
+    {
+        Spark::useUserModel('Cic\Models\User');
+
+        Spark::useTeamModel('Cic\Models\Team');
     }
 }

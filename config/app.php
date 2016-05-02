@@ -157,6 +157,22 @@ return [
         Cic\Providers\RouteServiceProvider::class,
 
         /*
+         * From prior version apparently undefined
+         */
+
+//        Cic\Providers\BusServiceProvider::class,
+//        Cic\Providers\ConfigServiceProvider::class,
+
+        /*
+         * requirements from installed packages
+         */
+        Collective\Html\HtmlServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
+
+        /*
          * Spark
          */
         Laravel\Spark\Providers\SparkServiceProvider::class,
@@ -208,6 +224,14 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // installed packages aliases
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
+        'HTML'=> Collective\Html\HtmlFacade::class,
+        'Form'=> Collective\Html\FormFacade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Image' => Intervention\Image\Facades\Image::class
+
 
     ],
 
