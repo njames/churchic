@@ -9,8 +9,6 @@
         "laravel/framework": "5.2.*",
         "laravel/spark": "^1.0",
         "laravel/cashier": "^6.0",
-        "guzzlehttp/guzzle": "5.*",
-        "guzzlehttp/oauth-subscriber": "*",
         "drewm/mailchimp-api" : "~2.1",
         "pda/pheanstalk": "~2.1",
         "vinkla/hashids":"~1.0",
