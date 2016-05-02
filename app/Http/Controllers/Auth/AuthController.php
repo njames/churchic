@@ -2,7 +2,7 @@
 
 namespace Cic\Http\Controllers\Auth;
 
-use Cic\User;
+use Cic\Models\User;
 use Validator;
 use Cic\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

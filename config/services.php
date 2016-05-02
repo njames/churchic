@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Cic\User::class,
+        'model'  => Cic\Models\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

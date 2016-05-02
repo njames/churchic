@@ -66,7 +66,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Cic\User::class,
+            'model' => Cic\Models\User::class,
         ],
 
         // 'users' => [
