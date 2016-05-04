@@ -13,7 +13,7 @@ class CreateGroupParticipantsTable extends Migration
         Schema::create('group_participants', function (Blueprint $table) {
 
         $table->increments('id');
-        $table->string('client_id', 30)->index();
+        $table->integer('team_id')->index();
         $table->integer('group_id')->index();
         $table->integer('participant_id')->index();
         $table->string('first_name', 60)->nullable();

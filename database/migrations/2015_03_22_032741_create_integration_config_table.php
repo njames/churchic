@@ -12,7 +12,7 @@ class CreateIntegrationConfigTable extends Migration
     {
         Schema::create('integration_configs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('client_id', 30)->index();
+            $table->integer('team_id')->index();
             $table->string('command', 128);
             $table->string('from_service', 20)->nullable();
             $table->string('from_group', 20)->nullable();

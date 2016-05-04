@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Spark</title>
+    <title>ChurchIC - Integration your Church Cloud Systems </title>
 
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cabin:600' rel='stylesheet' type='text/css'>
 
     <style>
         body, html {
-            background: url('/img/spark-bg.png');
-            background-repeat: repeat;
-            background-size: 300px 200px;
-            height: 100%;
-            margin: 0;
+            /*background: url('/img/spark-bg.png');*/
+            /*background-repeat: repeat;*/
+            /*background-size: 300px 200px;*/
+            /*height: 100%;*/
+            /*margin: 0;*/
+
         }
 
         .full-height {
@@ -42,6 +43,10 @@
 
         .text-center {
             text-align: center;
+            font-family: 'Cabin', sans-serif;
+            font-size: 64px;
+            font-weight: 600;
+
         }
 
         .links {
@@ -59,7 +64,7 @@
             border-radius: 4px;
             color: white;
             cursor: pointer;
-            font-family: 'Open Sans';
+            font-family: 'Cabin', sans-serif;
             font-size: 14px;
             font-weight: 600;
             padding: 15px;
@@ -86,7 +91,8 @@
 
         <div class="flex-fill flex-center">
             <h1 class="text-center">
-                <img src="/img/color-logo.png">
+                ChurchIC
+<!--                <img src="/img/color-logo.png">-->
             </h1>
         </div>
     </div>

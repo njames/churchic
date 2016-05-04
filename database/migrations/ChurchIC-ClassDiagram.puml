@@ -1,0 +1,48 @@
+@startuml
+
+
+
+Clients <|- ClientConnections
+Groups <|- GroupParticipants
+Individuals <|- GroupParticipants
+Clients <|- Users
+
+class Users {
+
+}
+
+
+
+class Clients {
+  Client_id
+  Client_name
+  Client_city
+}
+
+
+
+Class ClientConnections {
+
+}
+
+
+Class Individuals {
+...
+}
+
+Class Groups {
+ Group_Id
+}
+
+Class GroupParticipants {
+ Group_Id
+}
+
+Class SyncConfig {
+
+}
+
+
+
+
+@enduml

@@ -14,7 +14,7 @@ class CreatePhotoEventParticipantsTable extends Migration
     {
         Schema::create('photo_event_participants', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('client_id', 30)->index();
+            $table->integer('team_id')->index();
             $table->integer('photo_event_id')->unsigned();
             $table->string('first_name', 60);
             $table->string('last_name', 60)->nullable();
