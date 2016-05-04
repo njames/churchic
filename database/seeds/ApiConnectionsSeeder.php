@@ -15,7 +15,7 @@ class ApiConnectionsSeeder extends Seeder
 
         ApiConnection::create(
         [
-          'client_id' => 'hopeuc',
+          'team_id' => 1,
           'source_name' => 'CCB',
           'username' => 'metrics',
           'password' => 'metrics21',
@@ -28,7 +28,7 @@ class ApiConnectionsSeeder extends Seeder
 
         ClientConnection::create(
         [
-          'client_id' => 'hopeuc',
+          'team_id' => 1,
           'source_name' => 'Mailchimp',
           'username' => '',
           'password' => '',
