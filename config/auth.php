@@ -66,7 +66,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Cic\Models\User::class,
+            'model' => ChurchIC\Models\User::class,
         ],
 
         // 'users' => [

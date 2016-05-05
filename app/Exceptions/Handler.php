@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Exceptions;
+namespace ChurchIC\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

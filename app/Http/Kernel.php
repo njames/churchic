@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Http;
+namespace ChurchIC\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \Cic\Http\Middleware\EncryptCookies::class,
+            \ChurchIC\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Cic\Http\Middleware\VerifyCsrfToken::class,
+            \ChurchIC\Http\Middleware\VerifyCsrfToken::class,
             \Laravel\Spark\Http\Middleware\CreateFreshApiToken::class,
         ],
 
@@ -45,10 +45,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Cic\Http\Middleware\Authenticate::class,
+        'auth' => \ChurchIC\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'dev' => \Laravel\Spark\Http\Middleware\VerifyUserIsDeveloper::class,
-        'guest' => \Cic\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \ChurchIC\Http\Middleware\RedirectIfAuthenticated::class,
         'hasTeam' => \Laravel\Spark\Http\Middleware\VerifyUserHasTeam::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'subscribed' => \Laravel\Spark\Http\Middleware\VerifyUserIsSubscribed::class,

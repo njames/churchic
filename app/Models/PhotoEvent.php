@@ -1,9 +1,9 @@
 <?php
 
-namespace Cic\Models;
+namespace ChurchIC\Models;
 
 use Illuminate\Database\Eloquent\Model;
-//use Cic\Models\PhotoEventParticipants;
+//use ChurchIC\Models\PhotoEventParticipants;
 
 class PhotoEvent extends Model
 {
@@ -14,7 +14,7 @@ class PhotoEvent extends Model
 
     public function participants()
     {
-        return $this->hasMany('Cic\Models\PhotoEventParticipants');
+        return $this->hasMany('ChurchIC\Models\PhotoEventParticipants');
     }
 
 

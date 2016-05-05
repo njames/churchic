@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(Cic\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(ChurchIC\Models\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

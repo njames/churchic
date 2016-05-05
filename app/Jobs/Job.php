@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Jobs;
+namespace ChurchIC\Jobs;
 
 use Illuminate\Bus\Queueable;
 

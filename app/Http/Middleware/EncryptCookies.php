@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Http\Middleware;
+namespace ChurchIC\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

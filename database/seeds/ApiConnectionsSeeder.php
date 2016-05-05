@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cic\Models\ApiConnection;
+use ChurchIC\Models\ApiConnection;
 
 /**
  * @author nigeljames
@@ -16,7 +16,7 @@ class ApiConnectionsSeeder extends Seeder
         ApiConnection::create(
         [
           'team_id' => 1,
-          'source_name' => 'CCB',
+          'api_name' => 'CCB',
           'username' => 'metrics',
           'password' => 'metrics21',
           'apikey' => '',
@@ -26,10 +26,10 @@ class ApiConnectionsSeeder extends Seeder
           'access_token_secret' => '',
         ]);
 
-        ClientConnection::create(
+        ApiConnection::create(
         [
           'team_id' => 1,
-          'source_name' => 'Mailchimp',
+          'api_name' => 'Mailchimp',
           'username' => '',
           'password' => '',
           'apikey' => '9cf44c0944bf8968211498f59d069676-us8',

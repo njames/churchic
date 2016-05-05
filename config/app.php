@@ -151,17 +151,17 @@ return [
         /*
          * Application Service Providers...
          */
-        Cic\Providers\AppServiceProvider::class,
-        Cic\Providers\AuthServiceProvider::class,
-        Cic\Providers\EventServiceProvider::class,
-        Cic\Providers\RouteServiceProvider::class,
+        ChurchIC\Providers\AppServiceProvider::class,
+        ChurchIC\Providers\AuthServiceProvider::class,
+        ChurchIC\Providers\EventServiceProvider::class,
+        ChurchIC\Providers\RouteServiceProvider::class,
 
         /*
          * From prior version apparently undefined
          */
 
-//        Cic\Providers\BusServiceProvider::class,
-//        Cic\Providers\ConfigServiceProvider::class,
+//        ChurchIC\Providers\BusServiceProvider::class,
+//        ChurchIC\Providers\ConfigServiceProvider::class,
 
         /*
          * requirements from installed packages
@@ -177,7 +177,7 @@ return [
          */
         Laravel\Spark\Providers\SparkServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
-        Cic\Providers\SparkServiceProvider::class,
+        ChurchIC\Providers\SparkServiceProvider::class,
 
     ],
 

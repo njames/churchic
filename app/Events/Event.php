@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Events;
+namespace ChurchIC\Events;
 
 abstract class Event
 {

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cic\Models\SyncConfig;
+use ChurchIC\Models\IntegrationConfig;
 use Carbon\Carbon;
 
 class IntegrationConfigSeeder extends Seeder
@@ -13,13 +13,14 @@ class IntegrationConfigSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sync_configs')->delete();
+        DB::table('integration_configs')->delete();
 
-        SyncConfig::create(
+        IntegrationConfig::create(
         [
-            'client_id' => 'hopeuc',
+            'team_id' => 1,
             'command'   => 'cic:getGroupsFromCCB',
-            'last_run' => Carbon::now()
+            'run_every' => 60 * 24, // minutes
+            'last_run' => Carbon::create(1970, 1, 1)
         ]);
 
 

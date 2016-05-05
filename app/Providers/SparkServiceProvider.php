@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Providers;
+namespace ChurchIC\Providers;
 
 use Laravel\Spark\Spark;
 use Laravel\Spark\Providers\AppServiceProvider as ServiceProvider;
@@ -70,8 +70,8 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Spark::useUserModel('Cic\Models\User');
+        Spark::useUserModel('ChurchIC\Models\User');
 
-        Spark::useTeamModel('Cic\Models\Team');
+        Spark::useTeamModel('ChurchIC\Models\Team');
     }
 }

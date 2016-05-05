@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Providers;
+namespace ChurchIC\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Cic\Http\Controllers';
+    protected $namespace = 'ChurchIC\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

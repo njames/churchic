@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Console\Commands;
+namespace ChurchIC\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

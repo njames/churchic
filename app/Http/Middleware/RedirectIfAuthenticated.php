@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Http\Middleware;
+namespace ChurchIC\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

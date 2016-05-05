@@ -1,8 +1,8 @@
 <?php
 
-namespace Cic\Http\Controllers\Auth;
+namespace ChurchIC\Http\Controllers\Auth;
 
-use Cic\Http\Controllers\Controller;
+use ChurchIC\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

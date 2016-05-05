@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Models;
+namespace ChurchIC\Models;
 
 use Laravel\Spark\Team as SparkTeam;
 

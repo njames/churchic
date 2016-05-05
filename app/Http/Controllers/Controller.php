@@ -1,6 +1,6 @@
 <?php
 
-namespace Cic\Http\Controllers;
+namespace ChurchIC\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
