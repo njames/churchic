@@ -14,6 +14,7 @@ class CreateApiConnections extends Migration
         $table->increments('id');
         $table->integer('team_id')->index();
         $table->string('api_name', 60); //CCB, Mailchimp, PCO, etc
+        $table->string('uri', 512)->nullable();
         $table->string('username', 40);
         $table->string('password', 40);
         $table->string('apikey', 40);  // for those apps that use an apikey

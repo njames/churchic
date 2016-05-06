@@ -17,6 +17,7 @@ class ApiConnectionsSeeder extends Seeder
         [
           'team_id' => 1,
           'api_name' => 'CCB',
+          'uri' => 'https://hopeuc.ccbchurch.com/',
           'username' => 'metrics',
           'password' => 'metrics21',
           'apikey' => '',

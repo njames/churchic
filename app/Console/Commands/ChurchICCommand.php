@@ -68,9 +68,10 @@ class ChurchICCommand extends Command
         $apiConnection = ApiConnection::where('team_id', '=', $this->client)
                                           ->where('api_name', '=', 'CCB')->first();
 
-        $this->ccbApi = new CcbApi($apiConnection->team_id, $apiConnection->username, $apiConnection->password);
+        $this->ccbApi = new CcbApi($apiConnection->uri, $apiConnection->username, $apiConnection->password);
 
-}
+//        eval(\Psy\sh()); //
+    }
 
   /**
    * Tidy up after the fire has finished.
