@@ -13,18 +13,24 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        // Commands\Inspire::class,
+        'ChurchIC\Console\Commands\Inspire',
+        'ChurchIC\Console\Commands\getGroupParticipantsFromCCB',
+        'ChurchIC\Console\Commands\getGroupsFromCCB',
+        'ChurchIC\Console\Commands\getIndividualsFromCCB',
+        'ChurchIC\Console\Commands\getIndividualsFromCCBInitial',
+        'ChurchIC\Console\Commands\putGroupParticipantsToEmail',
+        'ChurchIC\Console\Commands\getListsFromEmail',
+        'ChurchIC\Console\Commands\setListsToEmail',
+        'ChurchIC\Console\Commands\ScheduleDB',
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
+     * @param \Illuminate\Console\Scheduling\Schedule $schedule
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('schedule:db')->everyMinute();
     }
 }

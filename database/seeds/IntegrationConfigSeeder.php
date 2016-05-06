@@ -18,7 +18,7 @@ class IntegrationConfigSeeder extends Seeder
         IntegrationConfig::create(
         [
             'team_id' => 1,
-            'command'   => 'cic:getGroupsFromCCB',
+            'command'   => 'churchic:getGroupsFromCCB',
             'run_every' => 60 * 24, // minutes
             'last_run' => Carbon::create(1970, 1, 1)
         ]);
