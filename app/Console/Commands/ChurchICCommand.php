@@ -66,7 +66,7 @@ class ChurchICCommand extends Command
 //    $this->hashids = new Hashids($this->client); // use clientname as seed
 
         $apiConnection = ApiConnection::where('team_id', '=', $this->client)
-                                          ->where('source_name', '=', 'CCB')->first();
+                                          ->where('api_name', '=', 'CCB')->first();
 
         $this->ccbApi = new CcbApi($apiConnection->team_id, $apiConnection->username, $apiConnection->password);
 
