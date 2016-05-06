@@ -9,7 +9,7 @@ class PhotoEvent extends Model
 {
     protected  $table = 'photo_events';
 
-    protected $fillable = ['client_id', 'name', 'key_photo'];
+    protected $fillable = ['team_id', 'name', 'key_photo'];
 
 
     public function participants()

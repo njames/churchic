@@ -1,6 +1,7 @@
 <?php  namespace ChurchIC\Api\Mailer\Mailchimp;
 
 use ChurchIC\Api\Mailer\MailerInterface;
+use ChurchIC\Models\ApiConnection;
 use ChurchIC\Models\ClientConnection;
 use DrewM\MailChimp\MailChimp as MailChimpSDK;
 use \DrewM\MailChimp\Batch;
@@ -27,7 +28,7 @@ class Mailer implements MailerInterface {
      */
     public function connect($clientId)
     {
-        $connection = ClientConnection::where('client_id', '=', $clientId)
+        $connection = ApiConnection::where('team_id', '=', $clientId)
                                       ->where('source_name', '=', $this->source )->first();
 
         return new MailChimpSDK($connection->apikey);

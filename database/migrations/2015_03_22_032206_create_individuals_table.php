@@ -12,9 +12,9 @@ class CreateIndividualsTable extends Migration
     {
         Schema::create('individuals', function (Blueprint $table) {
 
-//      $table->integer('team_id')->index();
-        $table->string('id', 10)->primary();
+        $table->increments('id');
         $table->string('team_id', 30)->index();
+        $table->string('ccb_id', 10);
         $table->integer('individual_id');
         $table->string('first_name', 60)->nullable();
         $table->string('last_name', 60)->nullable();

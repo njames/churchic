@@ -51,7 +51,7 @@ class getGroupsFromCCB extends ChurchICCommand
         }
 
         foreach ($sxe->response->groups->group as $group) {
-            $dbGroup = Group::where('client_id', '=', $this->client)
+            $dbGroup = Group::where('team_id', '=', $this->client)
                        ->where('group_id', '=', $group->attributes())
                        ->first(); // only one row to get
 
@@ -59,7 +59,7 @@ class getGroupsFromCCB extends ChurchICCommand
            $dbGroup = new Group();
        }
 
-            $dbGroup->client_id = $this->client;
+            $dbGroup->team_id = $this->client;
             $dbGroup->group_id = $group->attributes();
             $dbGroup->name = $group->name;
             $dbGroup->group_source = 'CCB';

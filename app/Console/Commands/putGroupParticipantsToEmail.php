@@ -63,7 +63,7 @@ class putGroupParticipantsToEmail extends ChurchICCommand
 
     private function createMailList($groupId)
     {
-        $groupParticipants = GroupParticipant::where('client_id', '=', $this->client)
+        $groupParticipants = GroupParticipant::where('team_id', '=', $this->client)
                                ->where('group_id', '=', $groupId)
                                ->where('receive_email_from_group', '=', true)->get();
 

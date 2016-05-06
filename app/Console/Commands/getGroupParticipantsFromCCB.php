@@ -43,7 +43,7 @@ class getGroupParticipantsFromCCB extends ChurchICCommand
         //
         parent::fire();
 
-//        $groupsToUpdate = SyncConfig::where('client_id', '=', $this->client)
+//        $groupsToUpdate = SyncConfig::where('team_id', '=', $this->client)
 //                         ->where('sync', '=', true)->get();
 
         $groupsToUpdate = [ $this->config->from_group ];
@@ -56,7 +56,7 @@ class getGroupParticipantsFromCCB extends ChurchICCommand
             $sxe = $this->parseXml($resp);
 
             foreach ($sxe->response->groups->group->participants->participant as $participant) {
-                $dbParticipant = GroupParticipant::where('client_id', '=', $this->client)
+                $dbParticipant = GroupParticipant::where('team_id', '=', $this->client)
                ->where('group_id', '=', $group)
                ->where('participant_id', '=', $participant->attributes())
                ->first(); // only one row to get
@@ -68,7 +68,7 @@ class getGroupParticipantsFromCCB extends ChurchICCommand
 //                eval(\Psy\sh());
 
 
-                $dbParticipant->client_id = $this->client;
+                $dbParticipant->team_id = $this->client;
                 $dbParticipant->group_id = $group;
                 $dbParticipant->participant_id = $participant->attributes();
 //        $dbParticipant->first_name = $participant->first_name;

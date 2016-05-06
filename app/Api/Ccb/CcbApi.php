@@ -14,10 +14,10 @@ class CcbApi
 
     protected $client;
 
-    public function __construct($client_id, $username, $password)
+    public function __construct($subdomain, $username, $password)
     {
         $client = new Client([
-      'base_url' => "https://$client_id.ccbchurch.com/",
+      'base_url' => "https://$subdomain.ccbchurch.com/",
       'defaults' => ['auth' => [$username, $password]],
     ]);
 

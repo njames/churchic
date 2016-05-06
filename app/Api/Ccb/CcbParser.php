@@ -30,7 +30,7 @@ class CcbParser
             }
 
             $dbIndividual->id = $id;
-            $dbIndividual->client_id = $client;
+            $dbIndividual->team_id = $client;
             $dbIndividual->individual_id = $individualId;
 
             $dbIndividual->first_name = $individual->first_name;

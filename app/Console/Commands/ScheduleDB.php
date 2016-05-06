@@ -53,10 +53,10 @@ class ScheduleDB extends Command
 
             if($now->gt($item->last_run->addMinutes($item->run_every))){
 
-                Log::info('Scheduled Task ' . $item->id .  ' for:' . $item->clientid  . ' running ' . $item->command);
+                Log::info('Scheduled Task ' . $item->id .  ' for:' . $item->team_id  . ' running ' . $item->command);
 
                 $exitCode = $this->call( $item->command, [
-                    'client' => $item->client_id,
+                    'client' => $item->team_id,
                     'config' => $item->id
                 ]);
 
