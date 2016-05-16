@@ -14,16 +14,18 @@
                         <th>Source</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Sync Members</th>
                     </tr>
                 </thead>
                 <tbody>
-              @foreach($groups as $group)
+                @foreach($groups as $group)
                 <tr>
                       <td> {{ $group->group_source }} </td>
-                      <td> {{ $group->name }} </td>
+                      <td> <a href="/integrations/groups/{{ $group->group_id }}">{{ $group->name }}</a> </td>
                       <td> {{ $group->description }} </td>
+                      <td> <input type="checkbox"></td>
                 </tr>
-              @endforeach
+                @endforeach
                 </tbody>
             </table>
             <div class="pagination"> {{ $groups->links() }} </div>

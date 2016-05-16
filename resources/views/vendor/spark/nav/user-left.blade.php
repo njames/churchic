@@ -18,8 +18,14 @@
             </a>
         </li>
         <li>
+            <a href="/integrations/config">
+                <i class="fa fa-fw fa-btn fa-cog"></i>Integration Configuration
+            </a>
+        </li>
+
+        <li>
             <a href="/integrations/groups">
-                <i class="fa fa-fw fa-btn fa-fort-awesome"></i>Groups
+                <i class="fa fa-fw fa-btn fa-users"></i>Groups
             </a>
         </li>
         <li class="divider"></li>
