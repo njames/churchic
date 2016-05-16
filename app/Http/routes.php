@@ -14,3 +14,9 @@
 Route::get('/', 'WelcomeController@show');
 
 Route::get('/home', 'HomeController@show');
+
+
+// church ic routes
+Route::get('integrations', 'IntegrationsController@show');
+Route::get('integrations/groups', 'GroupsController@show');
+

@@ -66,7 +66,7 @@ class ScheduleDB extends Command
 
                 $info = $worked ? "Updated task " : "Did not update task ";
 
-                Log::info( $info . $item->id );
+                Log::info( $info . $item->id  );
             }
 
         }
