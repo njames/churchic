@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+// update membership type 
+Route::get('/individuals', 'IndividualController@index');
+Route::get('/individuals/updatetype', 'IndividualController@updateType');
 
+Route::get('/', 'WelcomeController@index');
 //Route::get('home', 'HomeController@index');
 
 Route::get('/home', ['middleware' => 'auth', function () {
@@ -84,3 +87,11 @@ Route::group(['as' => 'PhotoEvents.'], function() {
 Route::get('/pi', function() {
     phpinfo();
 });
+
+
+
+
+
+
+
+

@@ -81,5 +81,19 @@ class CcbApi
 
         return $this->client->get($url);
     }
+
+    public function individualUpdateType($individualId, $type)
+    {
+        $service = 'update_individual';
+
+        $url = self::API_URI."?srv=$service&individual_id=$individualId";
+
+        return $this->client->post($url, [
+            'body' => [
+                'membership_type_id' => $type
+            ] 
+        ]);
+
+    }
   //
 }
