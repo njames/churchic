@@ -13,7 +13,7 @@
 
 // update membership type 
 Route::get('/individuals', 'IndividualController@index');
-Route::get('/individuals/updatetype', 'IndividualController@updateType');
+Route::post('/individuals/updatetype', ['as' => 'updateType', 'uses' => 'IndividualController@updateType']);
 
 Route::get('/', 'WelcomeController@index');
 //Route::get('home', 'HomeController@index');

@@ -8,6 +8,7 @@ use sc\cic\Http\Requests;
 use sc\cic\Http\Controllers\Controller;
 use sc\cic\Models\ClientConnection;
 use sc\cic\ApiHelpers\CcbApi;
+use sc\cic\Util\TypeImport;
 
 class IndividualController extends Controller
 {
@@ -21,22 +22,35 @@ class IndividualController extends Controller
         $this->ccbApi = new CcbApi($clientConnection->client_id, $clientConnection->username, $clientConnection->password);
     }
 
-    public function updateType()
+    public function updateType(TypeImport $import)
     {
-        $individualId = 4655; 
-        $type = 1;
+        $results = $import->get();
 
-        $returnValue = $this->ccbApi->individualUpdateType($individualId, $type);
-
-        if ($returnValue->statusCode == 200 )
+        foreach($results as $row) 
         {
-            return 'Updated Successfully';
+            $data = $row->toArray();
+
+            $returnValue = $this->ccbApi->individualUpdateType(
+                        (int)$data['individualid'],
+                        (int)$data['type']
+                    );
         }
+        // handle file upload
+        return 'Done';
 
-        // dd($returnValue);
+        // ////
+        // $individualId = 4655; 
+        // $type = 1;
+
+        // $returnValue = $this->ccbApi->individualUpdateType($individualId, $type);
+
+        // if ($returnValue->statusCode == 200 ) // error here - need to work out structure
+        // {
+        //     return 'Updated Successfully';
+        // }
+
+        // // dd($returnValue);
     }
-
-
 
 
     /**
@@ -46,7 +60,7 @@ class IndividualController extends Controller
      */
     public function index()
     {
-        return "hello";
+        return view('individuals.index');
     }
 
     /**
