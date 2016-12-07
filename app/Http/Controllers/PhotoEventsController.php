@@ -135,15 +135,16 @@ class PhotoEventsController extends Controller
      * @param $photo
      * @return string
      */
-    public function loadPhoto(Request $request)
+    public function loadPhoto(Request $request, $eventId)
     {
         $file = $request->file('file');
-        // validate
 
         // find record by original file name
-        $query =  PhotoEventParticipants::where('photo_original_name', $file->getClientOriginalName());
+        $query =  PhotoEventParticipants::where('id', $eventId)
+            ->where('photo_original_name', $file->getClientOriginalName());
+                    
         $participant = $query->first();
-//        dd($participant);
+       // dd($participant);
 //        Image::
 
         // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick

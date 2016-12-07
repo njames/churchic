@@ -39,11 +39,10 @@
 
 </div>
 
-<a href="{{route('PhotoEvents.downloadExcel', ['eventId' => $PhotoEvent->id])}}" target="_blank">Download csv</a>
 
 <hr>
 
-    <h3>Upload Photos</h3>
+<h3>Upload Photos</h3>
 
 <form action="{{ route('PhotoEvents.loadPhoto', ['eventId' => $PhotoEvent->id]) }}" method="POST" class="dropzone">
 
@@ -57,6 +56,8 @@
     </div>
 
 </form>
+<div><p></p></div>
+<a class="btn btn-success" href="{{route('PhotoEvents.downloadExcel', ['eventId' => $PhotoEvent->id])}}" target="_blank">Download csv for Mailchimp</a>
 
 @stop
 
