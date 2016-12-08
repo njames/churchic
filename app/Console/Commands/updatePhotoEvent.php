@@ -54,7 +54,7 @@ class updatePhotoEvent extends Command
         
         $files = Storage::disk('local')->allFiles($path); //'/'); //
         
-        for( $i = 0, $max = count($files); $i < $max; $i +=2 )
+        for( $i = 0, $max = count($files); $i < $max; $i++ )
         {
             $this->info($files[$i]);
 
@@ -65,7 +65,6 @@ class updatePhotoEvent extends Command
             if (strstr($files[$i] , 'tn')) {
                 $fileName = substr($fileName, 2) ;             
             }
-
 
             $this->info($fileName);
             
@@ -94,16 +93,6 @@ class updatePhotoEvent extends Command
 
         }
 
-// dd($files, $directory, count($files) );
-
-        // 
-        // 
-
-
-
     }
-
-
-
 
 }
