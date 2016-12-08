@@ -56,17 +56,22 @@ class updatePhotoEvent extends Command
         
         for( $i = 0, $max = count($files); $i < $max; $i +=2 )
         {
-            // $this->info($files[$i]);
+            $this->info($files[$i]);
 
             // take off the timestamp or tn{timestamp}
             // grab the rest of the name 
             $fileName = substr($files[$i], $charCount);
 
-            // $this->info($fileName);
+            if (strstr($files[$i] , 'tn')) {
+                $fileName = substr($fileName, 2) ;             
+            }
+
+
+            $this->info($fileName);
             
 
             // look for that file in the table
-            $query =  PhotoEventParticipants::where('id', $this->eventId)
+            $query =  PhotoEventParticipants::where('photo_event_id', $this->eventId)
                 ->where('photo_original_name', $fileName);
                     
             $participant = $query->first();
