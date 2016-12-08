@@ -49,7 +49,8 @@ class updatePhotoEvent extends Command
         $path = 'uploads/photos/' . $this->eventId . '/';
         $time = time();
 
-        $charCount = strlen($path) + strlen($time);
+        $charCountPath = strlen($path);
+        $charCountTime = strlen($time);
         // for each file in path uploads/photos/{eventId}/ 
         
         $files = Storage::disk('local')->allFiles($path); //'/'); //
@@ -58,13 +59,16 @@ class updatePhotoEvent extends Command
         {
             $this->info($files[$i]);
 
+            if (strstr($files[$i] , 'tn')) {
+                continue;         
+            }
+
             // take off the timestamp or tn{timestamp}
             // grab the rest of the name 
-            $fileName = substr($files[$i], $charCount);
+            $fullFileName = substr($files[$i], $charCountPath);
 
-            if (strstr($files[$i] , 'tn')) {
-                $fileName = substr($fileName, 2) ;             
-            }
+            $fileName = substr($files[$i], $charCountPath + $charCountTime);
+
 
             $this->info($fileName);
             
@@ -75,11 +79,11 @@ class updatePhotoEvent extends Command
                     
             $participant = $query->first();
 
-            $fileUrl =  public_path() . '/' . $path  . $fileName ; 
-            $tnFileUrl = url('/') . '/' . $path . 'tn' . $fileName ;
+            $fileUrl =  public_path() . '/' . $path  . $fullFileName ; 
+            $tnFileUrl = url('/') . '/' . $path . 'tn' . $fullFileName ;
             $email_link = route('PhotoEvents.getPhoto', ['eventId' => $participant->photo_event_id, 'hashId' => Hashids::encode($participant->id )] );
 
-            // $this->info($fileUrl);
+            $this->info($fileUrl);
             // $this->info($tnFileUrl);
             $this->info($email_link);
 
