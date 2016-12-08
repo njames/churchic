@@ -21,6 +21,9 @@ class Kernel extends ConsoleKernel
         'sc\cic\Console\Commands\putGroupParticipantsToEmail',
         'sc\cic\Console\Commands\getListsFromEmail',
         'sc\cic\Console\Commands\runCommands',
+        'sc\cic\Console\Commands\updatePhotoEvent',
+
+
     ];
 
     /**
