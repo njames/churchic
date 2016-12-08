@@ -62,11 +62,11 @@ class updatePhotoEvent extends Command
             // grab the rest of the name 
             $fileName = substr($files[$i], $charCount);
 
-            // $this->info($fileName);
+            $this->info($fileName);
             
 
             // look for that file in the table
-            $query =  PhotoEventParticipants::where('id', $this->eventId)
+            $query =  PhotoEventParticipants::where('photo_event_id', $this->eventId)
                 ->where('photo_original_name', $fileName);
                     
             $participant = $query->first();
