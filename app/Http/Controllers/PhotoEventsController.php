@@ -140,16 +140,18 @@ class PhotoEventsController extends Controller
         $file = $request->file('file');
 
         // find record by original file name
-        $query =  PhotoEventParticipants::where('id', $eventId)
+        $query =  PhotoEventParticipants::where('photo_event_id', $eventId)
             ->where('photo_original_name', $file->getClientOriginalName());
                     
         $participant = $query->first();
-       // dd($participant);
+        // dd($participant);
 //        Image::
 
         // save file - flyer perhaps to s3 or to mailchimp if that is going to be quick
 
-        $path = 'uploads/photos/' . $participant->photo_event_id;
+        $path = 'uploads/photos/' . $eventId;
+
+        // dd($path);
 
         $name = time() . $file->getClientOriginalName();
         $tnName = 'tn' . $name;
