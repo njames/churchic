@@ -9,3 +9,4 @@
 /public/uploads
 /storage/uploads
 phpinfo.php
+**/CCSeeder.php

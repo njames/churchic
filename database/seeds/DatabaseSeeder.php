@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call('ClientConnectionsSeeder');
+        $this->call('CCSeeder');
         $this->call('UserSeeder');
 
     }
